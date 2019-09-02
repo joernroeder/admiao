@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component matches the snapshot and contains the next arrow 1`] = `
+.emotion-0 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  color: black;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  background: none;
+  display: inline-block;
+  box-sizing: border-box;
+  font-weight: 700;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  cursor: default;
+}
+
+.emotion-0 .arrow {
+  display: inline-block;
+  margin-left: 0.5em;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-0:hover .arrow {
+  -webkit-transform: translateX(0.30em);
+  -ms-transform: translateX(0.30em);
+  transform: translateX(0.30em);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+<button
+  class="emotion-0"
+  color="black"
+  font-size="0"
+  letter-spacing="0.025em"
+>
+  Button Label
+  <span
+    class="arrow"
+  >
+    →
+  </span>
+</button>
+`;

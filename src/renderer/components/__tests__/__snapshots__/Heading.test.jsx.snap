@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading component should render correctly 1`] = `
+.emotion-0 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 2;
+  -webkit-transform: 2px;
+  -ms-transform: 2px;
+  transform: 2px;
+  font-family: 'SpaceGrotesk',sans-serif;
+  -webkit-letter-spacing: -0.02em;
+  -moz-letter-spacing: -0.02em;
+  -ms-letter-spacing: -0.02em;
+  letter-spacing: -0.02em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-0 {
+    font-size: 20px;
+    line-height: 3;
+    -webkit-transform: 3px;
+    -ms-transform: 3px;
+    transform: 3px;
+  }
+}
+
+<h1
+  class="emotion-0"
+  color="black"
+  font-size="2,2,3"
+>
+  Hello Jest
+</h1>
+`;

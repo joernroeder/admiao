@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text component should render correctly 1`] = `
+.emotion-0 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+<p
+  class="emotion-0"
+  color="black"
+  font-size="0"
+/>
+`;

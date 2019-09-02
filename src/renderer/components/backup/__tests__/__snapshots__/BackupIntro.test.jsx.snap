@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackupIntro view to have headline, description and button 1`] = `
+.emotion-12 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: _space-around;
+  -webkit-justify-content: _space-around;
+  -ms-flex-pack: _space-around;
+  justify-content: _space-around;
+  height: 100vh;
+  margin-left: -4px;
+  margin-right: -4px;
+  background-color: white;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+.emotion-6 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: -4px;
+  margin-right: -4px;
+  background-color: white;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 66.66666666666666%;
+}
+
+.emotion-0 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 2;
+  -webkit-transform: 2px;
+  -ms-transform: 2px;
+  transform: 2px;
+  font-family: 'SpaceGrotesk',sans-serif;
+  -webkit-letter-spacing: -0.02em;
+  -moz-letter-spacing: -0.02em;
+  -ms-letter-spacing: -0.02em;
+  letter-spacing: -0.02em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    margin-top: 128px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-0 {
+    margin-top: 512px;
+  }
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-0 {
+    font-size: 20px;
+    line-height: 3;
+    -webkit-transform: 3px;
+    -ms-transform: 3px;
+    transform: 3px;
+  }
+}
+
+.emotion-4 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 32px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 83.33333333333334%;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-4 {
+    width: 66.66666666666666%;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-4 {
+    width: 41.66666666666667%;
+  }
+}
+
+.emotion-3 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-10 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-top: 9px;
+  margin-left: -4px;
+  margin-right: -4px;
+  background-color: white;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-7 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  color: black;
+  margin-bottom: 32px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  background: none;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-7 {
+    margin-bottom: 128px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-7 {
+    margin-bottom: 512px;
+  }
+}
+
+.emotion-7 .arrow {
+  display: inline-block;
+  margin-left: 0.5em;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-7:hover .arrow {
+  -webkit-transform: translateX(0.30em);
+  -ms-transform: translateX(0.30em);
+  transform: translateX(0.30em);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-9 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 8.333333333333332%;
+}
+
+<div
+  class="emotion-12"
+>
+  <div
+    class="emotion-6"
+  >
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-1"
+      >
+        <h1
+          class="emotion-0"
+          color="black"
+          font-size="2,2,3"
+        >
+          Backup Seed
+        </h1>
+      </div>
+    </div>
+    <div
+      class="emotion-2"
+    >
+      <div
+        class="emotion-4"
+      >
+        <p
+          class="emotion-3"
+          color="black"
+          font-size="0"
+        >
+          Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-6"
+  >
+    <div
+      class="emotion-10"
+    >
+      <div
+        class="emotion-6"
+      >
+        <a
+          class="emotion-7"
+          color="black"
+          font-size="0"
+          href="//select-parts"
+          letter-spacing="0.025em"
+        >
+          Start Backup
+          <span
+            class="arrow"
+          >
+            →
+          </span>
+        </a>
+      </div>
+      <div
+        class="emotion-9"
+      />
+    </div>
+  </div>
+</div>
+`;

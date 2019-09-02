@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell component should correctly have 1/2 of the grid gutter as horizontal padding 1`] = `
+.emotion-0 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+<div
+  class="emotion-0"
+/>
+`;

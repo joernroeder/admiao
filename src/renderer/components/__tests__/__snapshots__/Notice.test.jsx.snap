@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Notice component should render correctly 1`] = `
+.emotion-0 {
+  background-color: black;
+  color: white;
+  padding: 4px;
+  padding-left: 8px;
+  margin-right: -8px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+  background-color: black;
+  color: white;
+}
+
+<p
+  class="emotion-0"
+  color="white"
+>
+  Hello from the other side
+</p>
+`;
