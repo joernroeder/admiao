@@ -2,21 +2,31 @@
 
 exports[`Notice component should render correctly 1`] = `
 .emotion-0 {
-  background-color: black;
   color: white;
+  background-color: black;
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 4px;
   padding-left: 8px;
   margin-right: -8px;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-variant-ligatures: common-ligatures;
-  background-color: black;
   color: white;
+  background-color: black;
 }
 
 <p
   class="emotion-0"
   color="white"
+  font-size="0"
 >
   Hello from the other side
 </p>

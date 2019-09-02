@@ -67,7 +67,7 @@ const ContinueWithSelection = () => {
 					<Button onClick={resetSelection} mr={2} showArrow={false}>
 						No, i want to start over
 					</Button>
-					<Button to={'../enter-seed'}>
+					<Button to={'../enter-seed'} variant={'filled'}>
 						Yes, continue seed backup!
 					</Button>
 				</Box>

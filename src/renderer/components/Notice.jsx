@@ -9,6 +9,7 @@ const Notice = styled(Text)`
 `
 
 Notice.defaultProps = {
+	...Text.defaultProps,
 	p: 1,
 	pl: 2,
 	mr: -2,

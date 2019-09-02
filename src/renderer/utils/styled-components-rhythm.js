@@ -10,7 +10,7 @@
  * Head over to https://github.com/ceteio/styled-components-rhythm#options-object and
  * https://github.com/ceteio/styled-components-rhythm#using-the-theme-values to read more about the setup.
  *
- * The purpose of it's modification is to make it compatible with styled-system and its flexible and responsive
+ * The purpose of its modification is to make it compatible with styled-system and its flexible and responsive
  * theme config. Head over to ./styled-system-rhythm to see how it's used.
  *
  * @example

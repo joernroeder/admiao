@@ -8,8 +8,8 @@
 		"@emotion/core": "^10.0.17",
 		"@emotion/styled": "^10.0.17",
 		"@reach/router": "^1.2.1",
-		"@styled-system/css": "^5.0.17",
-		"@styled-system/theme-get": "^5.0.18",
+		"@styled-system/css": "^5.0.23",
+		"@styled-system/theme-get": "^5.0.21",
 		"bip39": "^3.0.2",
 		"cross-env": "^5.2.0",
 		"drivelist": "^8.0.6",
@@ -23,7 +23,8 @@
 		"react-scripts": "3.1.1",
 		"reflexbox": "^4.0.5",
 		"slip39": "^0.1.5-dev.1",
-		"styled-system": "^5.0.18"
+		"styled-system": "^5.1.1",
+		"svg-to-pdfkit": "^0.1.7"
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
