@@ -184,7 +184,7 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
   -ms-transform: 0;
   transform: 0;
   color: black;
-  background-color: none;
+  background-color: transparent;
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;

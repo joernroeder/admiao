@@ -21,7 +21,7 @@ exports[`Button component matches the snapshot and contains the next arrow 1`] =
   -ms-transform: 0;
   transform: 0;
   color: black;
-  background-color: none;
+  background-color: transparent;
   display: inline-block;
   box-sizing: border-box;
   font-weight: 700;

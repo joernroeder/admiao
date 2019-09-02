@@ -19,7 +19,7 @@ describe('Button component', () => {
 		const { container } = render(<Button>Button Label</Button>)
 		const button = container.firstChild
 
-		expect(button).toHaveStyleRule('background-color', 'none')
+		expect(button).toHaveStyleRule('background-color', 'transparent')
 		expect(button).toHaveStyleRule('color', 'black')
 	})
 

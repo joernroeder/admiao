@@ -40,7 +40,7 @@ const variants = {
 	variants: {
 		outlined: {
 			color: 'black',
-			bg: 'none',
+			bg: 'transparent',
 		},
 		filled: {
 			color: 'white',

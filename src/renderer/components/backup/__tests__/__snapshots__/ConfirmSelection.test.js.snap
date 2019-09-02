@@ -145,7 +145,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   -ms-transform: 0;
   transform: 0;
   color: black;
-  background-color: none;
+  background-color: transparent;
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -451,7 +451,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   -ms-transform: 0;
   transform: 0;
   color: black;
-  background-color: none;
+  background-color: transparent;
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
