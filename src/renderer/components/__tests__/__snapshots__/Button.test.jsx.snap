@@ -5,7 +5,6 @@ exports[`Button component matches the snapshot and contains the next arrow 1`] =
   border-width: 2px;
   border-color: black;
   border-style: solid;
-  color: black;
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 4px;
@@ -21,7 +20,8 @@ exports[`Button component matches the snapshot and contains the next arrow 1`] =
   -webkit-transform: 0;
   -ms-transform: 0;
   transform: 0;
-  background: none;
+  color: black;
+  background-color: none;
   display: inline-block;
   box-sizing: border-box;
   font-weight: 700;
@@ -50,7 +50,6 @@ exports[`Button component matches the snapshot and contains the next arrow 1`] =
 
 <button
   class="emotion-0"
-  color="black"
   font-size="0"
   letter-spacing="0.025em"
 >

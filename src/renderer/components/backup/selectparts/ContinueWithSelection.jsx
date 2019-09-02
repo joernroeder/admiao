@@ -45,6 +45,7 @@ const ContinueWithSelection = () => {
 						<CurrentValue
 							color={'black'}
 							backgroundColor={'lightGray'}
+							aria-label={'Total Parts'}
 							{...currentValueProps}
 						>
 							{uniquePartsN}
@@ -52,7 +53,10 @@ const ContinueWithSelection = () => {
 						<Text>Total Parts</Text>
 					</Flex>
 					<Flex flexDirection={'column'} alignItems={'flex-start'}>
-						<CurrentValue {...currentValueProps}>
+						<CurrentValue
+							aria-label={'Required Parts'}
+							{...currentValueProps}
+						>
 							{requiredPartsT}
 						</CurrentValue>
 						<Text>Required Parts</Text>

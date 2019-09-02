@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 
+import isPropValid from '../utils/isPropValid'
+
 import { Link } from '@reach/router'
 import { space, color } from 'styled-system'
 import {
@@ -7,7 +9,9 @@ import {
 	verticalRhythmProps,
 } from '../utils/styled-system-rhythm'
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link, {
+	shouldForwardProp: isPropValid,
+})`
 	${color};
 	${space};
 	${verticalRhythm};

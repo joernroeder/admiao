@@ -167,7 +167,6 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
   border-width: 2px;
   border-color: black;
   border-style: solid;
-  color: black;
   margin-bottom: 32px;
   padding-left: 8px;
   padding-right: 8px;
@@ -184,7 +183,8 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
   -webkit-transform: 0;
   -ms-transform: 0;
   transform: 0;
-  background: none;
+  color: black;
+  background-color: none;
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -281,10 +281,7 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
       >
         <a
           class="emotion-7"
-          color="black"
-          font-size="0"
           href="//select-parts"
-          letter-spacing="0.025em"
         >
           Start Backup
           <span

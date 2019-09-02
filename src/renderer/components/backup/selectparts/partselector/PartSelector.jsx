@@ -81,7 +81,7 @@ const PartSelector = ({
 						onClick={onIncrement}
 						aria-label={buttonLabels.increment}
 					>
-						&plus;
+						+
 					</Button>
 					<Button
 						{...variant}

@@ -1,0 +1,643 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Confirm Selection part selection should be displayed correctly correctly display 2 of 3 1`] = `
+.emotion-8 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: -4px;
+  margin-right: -4px;
+  background-color: white;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 256px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 25%;
+}
+
+.emotion-0 {
+  color: black;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-transform: 1px;
+  -ms-transform: 1px;
+  transform: 1px;
+  -webkit-letter-spacing: 0.015em;
+  -moz-letter-spacing: 0.015em;
+  -ms-letter-spacing: 0.015em;
+  letter-spacing: 0.015em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-1 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-7 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 9px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 41.66666666666667%;
+}
+
+.emotion-3 {
+  color: black;
+  margin-bottom: 8px;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-transform: 1px;
+  -ms-transform: 1px;
+  transform: 1px;
+  font-family: 'SpaceGrotesk',sans-serif;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-3 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-3 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+.emotion-4 {
+  color: black;
+  margin-bottom: 9px;
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-5 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  margin-right: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: black;
+  background-color: none;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-5 .arrow {
+  display: inline-block;
+  margin-left: 0.5em;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-5:hover .arrow {
+  -webkit-transform: translateX(0.30em);
+  -ms-transform: translateX(0.30em);
+  transform: translateX(0.30em);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-6 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: white;
+  background-color: black;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-6 .arrow {
+  display: inline-block;
+  margin-left: 0.5em;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-6:hover .arrow {
+  -webkit-transform: translateX(0.30em);
+  -ms-transform: translateX(0.30em);
+  transform: translateX(0.30em);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+<div
+  class="emotion-8"
+>
+  <div
+    class="emotion-2"
+    style="text-align: center;"
+  >
+    <svg
+      class=" pieSVG"
+      viewBox="0 0 300 300"
+    >
+      <path
+        d="M150 150 L 150 0 A 150 150 0 0 1 279.9038105676658 225.00000000000003 L 150 150"
+        fill="#f00"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 279.9038105676658 225.00000000000003 A 150 150 0 0 1 20.09618943233417 224.99999999999994 L 150 150"
+        fill="#f00"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 20.09618943233417 224.99999999999994 A 150 150 0 0 1 150.00000000000009 0 L 150 150"
+        fill="#ccc"
+        stroke="#fff"
+        stroke-width="3"
+      />
+    </svg>
+    <h3
+      class="emotion-0"
+      color="black"
+      font-size="1"
+    >
+      2
+       of 
+      3
+    </h3>
+    <p
+      class="emotion-1"
+      color="black"
+      font-size="0"
+    >
+      Parts Required
+    </p>
+  </div>
+  <div
+    class="emotion-7"
+  >
+    <h2
+      class="emotion-3"
+      color="black"
+      font-size="1,2,2"
+    >
+      Confirm Selection
+    </h2>
+    <p
+      class="emotion-4"
+      color="black"
+      font-size="0"
+    >
+      Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula?
+    </p>
+    <a
+      class="emotion-5"
+      href="/select-parts"
+    >
+      Nope, go back.
+    </a>
+    <a
+      class="emotion-6"
+      href="/how-to-distribute"
+    >
+      Yes, looks good!
+      <span
+        class="arrow"
+      >
+        →
+      </span>
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Confirm Selection part selection should be displayed correctly correctly display 5 of 8 1`] = `
+.emotion-8 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: -4px;
+  margin-right: -4px;
+  background-color: white;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 256px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 25%;
+}
+
+.emotion-0 {
+  color: black;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-transform: 1px;
+  -ms-transform: 1px;
+  transform: 1px;
+  -webkit-letter-spacing: 0.015em;
+  -moz-letter-spacing: 0.015em;
+  -ms-letter-spacing: 0.015em;
+  letter-spacing: 0.015em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-1 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-7 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 9px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 41.66666666666667%;
+}
+
+.emotion-3 {
+  color: black;
+  margin-bottom: 8px;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-transform: 1px;
+  -ms-transform: 1px;
+  transform: 1px;
+  font-family: 'SpaceGrotesk',sans-serif;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-3 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-3 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+.emotion-4 {
+  color: black;
+  margin-bottom: 9px;
+  margin-top: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-5 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  margin-right: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: black;
+  background-color: none;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-5 .arrow {
+  display: inline-block;
+  margin-left: 0.5em;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-5:hover .arrow {
+  -webkit-transform: translateX(0.30em);
+  -ms-transform: translateX(0.30em);
+  transform: translateX(0.30em);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-6 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: white;
+  background-color: black;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+}
+
+.emotion-6 .arrow {
+  display: inline-block;
+  margin-left: 0.5em;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-6:hover .arrow {
+  -webkit-transform: translateX(0.30em);
+  -ms-transform: translateX(0.30em);
+  transform: translateX(0.30em);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+<div
+  class="emotion-8"
+>
+  <div
+    class="emotion-2"
+    style="text-align: center;"
+  >
+    <svg
+      class=" pieSVG"
+      viewBox="0 0 300 300"
+    >
+      <path
+        d="M150 150 L 150 0 A 150 150 0 0 1 256.06601717798213 43.93398282201787 L 150 150"
+        fill="#f00"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 256.06601717798213 43.93398282201787 A 150 150 0 0 1 300 150 L 150 150"
+        fill="#f00"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 300 150 A 150 150 0 0 1 256.06601717798213 256.06601717798213 L 150 150"
+        fill="#f00"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 256.06601717798213 256.06601717798213 A 150 150 0 0 1 150.00000000000003 300 L 150 150"
+        fill="#f00"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 150.00000000000003 300 A 150 150 0 0 1 43.93398282201788 256.06601717798213 L 150 150"
+        fill="#f00"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 43.93398282201788 256.06601717798213 A 150 150 0 0 1 0 150.00000000000003 L 150 150"
+        fill="#ccc"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 0 150.00000000000003 A 150 150 0 0 1 43.93398282201785 43.933982822017896 L 150 150"
+        fill="#ccc"
+        stroke="#fff"
+        stroke-width="3"
+      />
+      <path
+        d="M150 150 L 43.93398282201785 43.933982822017896 A 150 150 0 0 1 149.99999999999997 0 L 150 150"
+        fill="#ccc"
+        stroke="#fff"
+        stroke-width="3"
+      />
+    </svg>
+    <h3
+      class="emotion-0"
+      color="black"
+      font-size="1"
+    >
+      5
+       of 
+      8
+    </h3>
+    <p
+      class="emotion-1"
+      color="black"
+      font-size="0"
+    >
+      Parts Required
+    </p>
+  </div>
+  <div
+    class="emotion-7"
+  >
+    <h2
+      class="emotion-3"
+      color="black"
+      font-size="1,2,2"
+    >
+      Confirm Selection
+    </h2>
+    <p
+      class="emotion-4"
+      color="black"
+      font-size="0"
+    >
+      Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula?
+    </p>
+    <a
+      class="emotion-5"
+      href="/select-parts"
+    >
+      Nope, go back.
+    </a>
+    <a
+      class="emotion-6"
+      href="/how-to-distribute"
+    >
+      Yes, looks good!
+      <span
+        class="arrow"
+      >
+        →
+      </span>
+    </a>
+  </div>
+</div>
+`;

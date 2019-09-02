@@ -4,6 +4,9 @@ import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
 import { matchers } from 'jest-emotion'
 
+// mock local storage
+import 'jest-localstorage-mock'
+
 import { render } from '@testing-library/react'
 import {
 	createHistory,

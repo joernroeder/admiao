@@ -2,8 +2,16 @@ import React from 'react'
 import { Link } from '@reach/router'
 
 import styled from '@emotion/styled'
-import isPropValid from '@emotion/is-prop-valid'
-import { border, color, height, space, typography, width } from 'styled-system'
+import isPropValid from '../utils/isPropValid'
+import {
+	border,
+	color,
+	height,
+	space,
+	typography,
+	width,
+	variant,
+} from 'styled-system'
 
 import {
 	verticalRhythm,
@@ -28,6 +36,19 @@ const arrow = `
     }
 `
 
+const variants = {
+	variants: {
+		outlined: {
+			color: 'black',
+			bg: 'none',
+		},
+		filled: {
+			color: 'white',
+			bg: 'black',
+		},
+	},
+}
+
 const ButtonEl = styled.button`
 	${border};
 	${color};
@@ -36,7 +57,8 @@ const ButtonEl = styled.button`
 	${height};
 	${typography};
 	${verticalRhythm};
-	background: none;
+	${variant(variants)};
+	//background: none;
 	display: inline-block;
 	box-sizing: border-box;
 	font-weight: 700;
@@ -48,7 +70,7 @@ const ButtonEl = styled.button`
 `
 
 const StyledLink = styled(Link, {
-	shouldForwardProp: prop => isPropValid(prop),
+	shouldForwardProp: isPropValid,
 })`
 	${border};
 	${color};
@@ -57,7 +79,8 @@ const StyledLink = styled(Link, {
 	${height};
 	${typography};
 	${verticalRhythm};
-	background: none;
+	${variant(variants)};
+	//background: none;
 	display: inline-block;
 	text-decoration: none;
 	font-weight: 700;
@@ -73,13 +96,14 @@ const StyledLink = styled(Link, {
 
 const defaultProps = {
 	...verticalRhythmProps([0]),
-	color: 'black',
+	//color: 'black',
 	borderWidth: 2,
 	borderColor: 'black',
 	borderStyle: 'solid',
 	px: 2,
 	py: 1,
 	letterSpacing: '0.025em',
+	variant: 'outlined',
 }
 
 ButtonEl.defaultProps = defaultProps

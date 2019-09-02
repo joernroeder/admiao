@@ -17,9 +17,9 @@ import PieChart from '../PieChart'
 const ConfirmSelection = props => {
 	const dispatch = useSeedPartsDispatch()
 	const { uniquePartsN, requiredPartsT } = useSeedPartsState()
-	console.log(props)
-	const { colors: themeColors } = useContext(ThemeContext)
-	const { lightGray = '#f00', black = '#000' } = themeColors
+	const {
+		colors: { lightGray = '#ccc', black = '#f00' },
+	} = useContext(ThemeContext)
 
 	const onConfirmClick = () => {
 		dispatch({ type: 'CONFIRM' })
@@ -65,7 +65,11 @@ const ConfirmSelection = props => {
 				<Button to={'../select-parts'} showArrow={false} mr={3}>
 					Nope, go back.
 				</Button>
-				<Button to={'../how-to-distribute'} onClick={onConfirmClick}>
+				<Button
+					to={'../how-to-distribute'}
+					onClick={onConfirmClick}
+					variant={'filled'}
+				>
 					Yes, looks good!
 				</Button>
 			</Cell>
