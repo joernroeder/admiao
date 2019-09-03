@@ -1,12 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import GridWrap from '../GridWrap'
 import Cell from '../Cell'
 import SubHeading from '../SubHeading'
 import Text from '../Text'
 import Button from '../Button'
+import { useGeneratedPartsDispatch } from '../../store/GeneratedPartsStore'
+import { useSeedWordsDispatch } from '../../store/SeedWordsStore'
+import { useSeedPartsDispatch } from '../../store/SeedPartsStore'
+import { useDistributionDispatch } from '../../store/DistributionStore'
 
 const BackupOutro = () => {
+	const seedPartsDispatch = useSeedPartsDispatch()
+	const seedWordsDispatch = useSeedWordsDispatch()
+	const distributionDispatch = useDistributionDispatch()
+	//const generatedPartsDispatch = useGeneratedPartsDispatch()
+
+	useEffect(() => {
+		;[seedPartsDispatch, seedWordsDispatch, distributionDispatch].forEach(
+			dispatch => {
+				console.log('dispatch', dispatch)
+				if (!dispatch) {
+					return
+				}
+
+				dispatch({ type: 'RESET' })
+			}
+		)
+	}, [seedPartsDispatch, seedWordsDispatch, distributionDispatch])
+
 	return (
 		<>
 			<GridWrap
