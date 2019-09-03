@@ -11,8 +11,8 @@ describe('SelectParts view', () => {
 		return renderWithProviders(children, global.renderWithRouter)
 	}
 
-	const renderWithProviders = (children, renderfn = render) => {
-		return renderfn(
+	const renderWithProviders = (children, renderFunction = render) => {
+		return renderFunction(
 			<DistributionProvider>
 				<SeedPartsProvider>{children}</SeedPartsProvider>
 			</DistributionProvider>

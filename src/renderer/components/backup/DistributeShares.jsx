@@ -14,7 +14,7 @@ import {
 
 const HowToDistributeParts = () => {
 	const dispatch = useDistributionDispatch()
-	//const [_, setDistributionType] = useDistributionState();
+
 	return (
 		<>
 			<GridWrap flexDirection={'column'}>
@@ -77,19 +77,14 @@ const HowToDistributeParts = () => {
 								</Button>
 
 								<StyledLink
-									to={'../enter-seed'}
-									onClick={() =>
-										dispatch({
-											type: DistributionTypes.FILE_SYSTEM,
-										})
-									}
+									to={'./warn-file-system'}
 									ml={2}
+									mt={1}
 									pl={'2px'}
 									py={'4px'}
-									//onClick={() => dispatchUsbDisk({ type: 'DISABLE_DISK_MANAGEMENT' })}
 								>
-									Dont know yet. Just store the PDFs on disk
-									for now.
+									I don't know yet. Just store the PDFs on
+									disk.
 								</StyledLink>
 							</Flex>
 						</Cell>

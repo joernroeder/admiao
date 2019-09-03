@@ -14,14 +14,21 @@ import Text from '../../Text'
 import TextHeading from '../../TextHeading'
 import CurrentValue from './partselector/CurrentValue'
 import { verticalRhythmProps } from '../../../utils/styled-system-rhythm'
-import { useDistributionState } from '../../../store/DistributionStore'
+import {
+	useDistributionDispatch,
+	useDistributionState,
+} from '../../../store/DistributionStore'
 
 const ContinueWithSelection = () => {
-	const dispatch = useSeedPartsDispatch()
+	const seedPartsDispatch = useSeedPartsDispatch()
+	const distributionDispatch = useDistributionDispatch()
 
 	const { uniquePartsN, requiredPartsT } = useSeedPartsState()
 	const { distributionIdentifier } = useDistributionState()
-	const resetSelection = () => dispatch({ type: 'RESET' })
+	const resetSelection = () => {
+		seedPartsDispatch({ type: 'RESET' })
+		distributionDispatch({ type: 'RESET' })
+	}
 
 	const currentValueProps = {
 		mb: 1,

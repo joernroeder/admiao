@@ -18,7 +18,7 @@ const NoWrap = styled.span`
 	white-space: nowrap;
 `
 
-const PrepareDisks = () => {
+const PrepareDrives = () => {
 	const { requiredPartsT, requiredDisks, partsPerDisk } = useSeedPartsState()
 	const dispatch = useDistributionDispatch()
 
@@ -29,35 +29,39 @@ const PrepareDisks = () => {
 			<Cell gridOffset={4} gridColumn={6} mt={9}>
 				<SubHeading mb={2}>
 					Prepare
-					<wbr /> <NoWrap>USB-Disks</NoWrap>
+					<wbr /> <NoWrap>USB-Drives</NoWrap>
 				</SubHeading>
 			</Cell>
 			<Cell gridOffset={3} gridColumn={5}>
 				<Text mb={2}>
 					In order to get your seed backup of this device in a secure
 					way we’d suggest to have{' '}
-					<strong>{requiredDisks} different</strong> USB-Disks
+					<strong>{requiredDisks} different</strong> USB-Drives
 					prepared so we can store {partsPerDisk > 1 ? 'up to ' : ''}
-					<strong>{partsPerDisk} parts on each disk</strong>.
+					<strong>
+						{partsPerDisk}&nbsp;
+						{partsPerDisk > 1 ? 'parts' : 'part'} on each drive
+					</strong>
+					.
 				</Text>
 				<Text>
 					This means that even if the files of{' '}
-					<strong>one disk</strong> get compromised during printing
-					due to a malicious computer or printer, lost of the disk
-					etc. the attacker has still access to less than the required{' '}
-					<NoWrap>{requiredPartsT} parts.</NoWrap>
+					<strong>one drive</strong> get compromised during printing
+					due to a malicious computer or printer, lost of the drive
+					etc. the attacker has still access to less than the{' '}
+					<strong>
+						required <NoWrap>{requiredPartsT}&nbsp;parts.</NoWrap>
+					</strong>
 				</Text>
 			</Cell>
 			<Cell gridOffset={8}>
 				<Button to={enterSeedUrl}>
-					Yes, i have {requiredDisks} disks prepared
+					Yes, i have {requiredDisks} drives prepared
 				</Button>
 				<br />
 				<StyledLink
-					to={enterSeedUrl}
-					onClick={() =>
-						dispatch({ type: DistributionTypes.FILE_SYSTEM })
-					}
+					to={'./warn-file-system'}
+					state={{ fromPrepareDrives: true }}
 					mt={1}
 					pt={'4px'}
 					ml={2}
@@ -70,4 +74,4 @@ const PrepareDisks = () => {
 	)
 }
 
-export default PrepareDisks
+export default PrepareDrives

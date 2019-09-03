@@ -22,7 +22,7 @@ const Line = styled.div`
 
 	transition: opacity 0.15s ease-out;
 
-	&:nth-last-child(2) {
+	&:nth-last-of-type(2) {
 		opacity: 0.75;
 	}
 	&:last-child {

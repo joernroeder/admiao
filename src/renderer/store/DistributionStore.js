@@ -71,7 +71,6 @@ function DistributionProvider({ children }) {
 			return
 		}
 
-		console.log(Object.values(state).filter(Boolean).length)
 		localStorage.setItem(localStorageKey, JSON.stringify(state))
 	}, [state])
 

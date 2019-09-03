@@ -15,10 +15,11 @@ import BackupIntro from './components/backup/BackupIntro'
 import SelectParts from './components/backup/SelectParts'
 import ConfirmSelection from './components/backup/ConfirmSelection'
 
-import HowToDistributeParts from './components/backup/DistributeParts'
+import HowToDistributeShares from './components/backup/DistributeShares'
 import GenerateTemplate from './components/backup/distributeparts/GenerateTemplate'
+import FileSystemWarning from './components/backup/distributeparts/FileSystemWarning'
 
-import PrepareDisks from './components/backup/PrepareDisks'
+import PrepareDrives from './components/backup/PrepareDrives'
 import EnterSeedView from './components/backup/EnterSeedView'
 import Generate from './components/backup/Generate'
 import WriteDownView from './components/backup/generateparts/distributelocal/WriteDownView'
@@ -55,10 +56,14 @@ const App = () => {
 						<SelectParts path="select-parts" />
 						<ConfirmSelection path="confirm-selection" />
 						<NestedRoute path="how-to-distribute">
-							<HowToDistributeParts path="/" />
+							<HowToDistributeShares path="/" />
 							<GenerateTemplate path="print-template" />
+							<FileSystemWarning path="warn-file-system" />
 						</NestedRoute>
-						<PrepareDisks path="prepare-disks" />
+						<NestedRoute path="prepare-disks">
+							<PrepareDrives path="/" />
+							<FileSystemWarning path="warn-file-system" />
+						</NestedRoute>
 						<EnterSeedView path="enter-seed/*" />
 						{/* todo wrap in seed parts store */}
 						<UseGeneratedPartsStoreRoute path="generate">
