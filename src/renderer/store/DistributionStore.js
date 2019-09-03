@@ -66,6 +66,12 @@ function DistributionProvider({ children }) {
 			return
 		}
 
+		// filter out empty and initial states
+		if (!Object.values(state).filter(Boolean).length) {
+			return
+		}
+
+		console.log(Object.values(state).filter(Boolean).length)
 		localStorage.setItem(localStorageKey, JSON.stringify(state))
 	}, [state])
 

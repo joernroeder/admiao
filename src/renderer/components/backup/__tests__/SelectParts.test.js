@@ -4,18 +4,27 @@ import { fireEvent, render } from '@testing-library/react'
 
 import SelectParts from '../SelectParts'
 import { SeedPartsProvider } from '../../../store/SeedPartsStore'
+import { DistributionProvider } from '../../../store/DistributionStore'
 
 describe('SelectParts view', () => {
-	beforeEach(() => {
+	const renderWithRouterAndProviders = children => {
+		return renderWithProviders(children, global.renderWithRouter)
+	}
+
+	const renderWithProviders = (children, renderfn = render) => {
+		return renderfn(
+			<DistributionProvider>
+				<SeedPartsProvider>{children}</SeedPartsProvider>
+			</DistributionProvider>
+		)
+	}
+
+	afterEach(() => {
 		localStorage.clear()
 	})
 
 	test('to render the default view if no status is present', () => {
-		const { getByText } = render(
-			<SeedPartsProvider>
-				<SelectParts />
-			</SeedPartsProvider>
-		)
+		const { getByText } = renderWithProviders(<SelectParts />)
 
 		// headline
 		expect(getByText(/Select Parts/i)).toBeInTheDocument()
@@ -23,10 +32,8 @@ describe('SelectParts view', () => {
 
 	describe('part selector component', () => {
 		test('to be able to increment and decrement total parts', () => {
-			const { getByText, getByLabelText } = render(
-				<SeedPartsProvider>
-					<SelectParts />
-				</SeedPartsProvider>
+			const { getByText, getByLabelText } = renderWithProviders(
+				<SelectParts />
 			)
 
 			const totalParts = getByText('3')
@@ -48,10 +55,8 @@ describe('SelectParts view', () => {
 		})
 
 		test('to be able to increment and decrement required parts limited by the total selection', () => {
-			const { getByText, getByLabelText, debug } = render(
-				<SeedPartsProvider>
-					<SelectParts />
-				</SeedPartsProvider>
+			const { getByText, getByLabelText, debug } = renderWithProviders(
+				<SelectParts />
 			)
 
 			const totalParts = getByText('3')
@@ -85,10 +90,8 @@ describe('SelectParts view', () => {
 	})
 
 	test('continue button should navigate to the parts confirmation page at "/confirm-selection"', () => {
-		const { history, getByText } = global.renderWithRouter(
-			<SeedPartsProvider>
-				<SelectParts />
-			</SeedPartsProvider>
+		const { history, getByText } = renderWithRouterAndProviders(
+			<SelectParts />
 		)
 
 		fireEvent.click(getByText('Continue'))
@@ -96,14 +99,9 @@ describe('SelectParts view', () => {
 		expect(history.location.pathname).toEqual('/confirm-selection')
 	})
 
-	// todo test for confirmation and distribution selection and redirect accordingly
 	test('the ability to continue with a selection made previously', () => {
 		// first visit
-		const firstVisit = render(
-			<SeedPartsProvider>
-				<SelectParts />
-			</SeedPartsProvider>
-		)
+		const firstVisit = renderWithProviders(<SelectParts />)
 
 		// 1. check that we are on the selection page.
 		expect(firstVisit.getByText(/Select Parts/i)).toBeInTheDocument()
@@ -120,11 +118,7 @@ describe('SelectParts view', () => {
 		firstVisit.unmount()
 
 		// second visit
-		const secondVisit = global.renderWithRouter(
-			<SeedPartsProvider>
-				<SelectParts />
-			</SeedPartsProvider>
-		)
+		const secondVisit = renderWithRouterAndProviders(<SelectParts />)
 
 		expect(
 			secondVisit.getByText('Continue Seed Backup')
@@ -138,16 +132,30 @@ describe('SelectParts view', () => {
 
 		fireEvent.click(secondVisit.getByText('Yes, continue seed backup!'))
 
-		expect(secondVisit.history.location.pathname).toEqual('/enter-seed')
+		expect(secondVisit.history.location.pathname).toEqual(
+			'/how-to-distribute'
+		)
+
+		secondVisit.unmount()
+
+		// time passes by, the user selects a distribution type during second visit.
+		// third visit, distribution selection is made, identifier is present.
+		localStorage.setItem(
+			'DistributionState',
+			JSON.stringify({
+				distributionIdentifier: 'some-identifier',
+			})
+		)
+
+		const thirdVisit = renderWithRouterAndProviders(<SelectParts />)
+
+		fireEvent.click(thirdVisit.getByText('Yes, continue seed backup!'))
+		expect(thirdVisit.history.location.pathname).toEqual('/enter-seed')
 	})
 
 	test('the ability to reset a selection made previously', () => {
 		// first visit
-		const firstVisit = render(
-			<SeedPartsProvider>
-				<SelectParts />
-			</SeedPartsProvider>
-		)
+		const firstVisit = renderWithProviders(<SelectParts />)
 
 		// 1. change selection
 		fireEvent.click(firstVisit.getByLabelText('Increment Total Parts'))
@@ -160,11 +168,7 @@ describe('SelectParts view', () => {
 		firstVisit.unmount()
 
 		// second visit
-		const secondVisit = render(
-			<SeedPartsProvider>
-				<SelectParts />
-			</SeedPartsProvider>
-		)
+		const secondVisit = renderWithProviders(<SelectParts />)
 
 		// 1. we are on the "continue previous selection" page
 		expect(
@@ -191,11 +195,7 @@ describe('SelectParts view', () => {
 		secondVisit.unmount()
 
 		// third visit
-		const thirdVisit = render(
-			<SeedPartsProvider>
-				<SelectParts />
-			</SeedPartsProvider>
-		)
+		const thirdVisit = renderWithProviders(<SelectParts />)
 
 		// 4. still on the regular selection page
 		expect(thirdVisit.getByText(/Select Parts/i)).toBeInTheDocument()
