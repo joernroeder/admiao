@@ -83,7 +83,7 @@ const ConfirmPart = ({ partIndex }) => {
 		words: ["lecture", "category", "academic", "leaf", "agree", "body", "painting…nsion", "survive", "floral", "spray", "language", "visitor", "dress"],
 		isValid: true,
 		*/
-		words: parts,
+		words: partWordsList,
 		isValid: true,
 		//words: [],
 		//isValid: false
