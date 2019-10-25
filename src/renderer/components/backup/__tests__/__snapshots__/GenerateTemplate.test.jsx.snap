@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Print Templates it should correctly update whenever the onCopyToDrive prop of the PrintTemplate component gets called 1`] = `CopyTemplateToUsbComponent`;

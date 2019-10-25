@@ -1,5 +1,3 @@
-const { app, dialog } = require('electron')
-
 const { generatePartsFor } = require('../slip39generator')
 
 const {
@@ -19,9 +17,9 @@ module.exports = (ipcMain, modules) => {
 		let error = null
 
 		try {
-			data = generatePartsFor(words, { required, total })
+			const { parts } = generatePartsFor(words, { required, total })
 
-			const identifier = generateSharePdfs(data, settings)
+			const identifier = generateSharePdfs(parts, settings)
 
 			data = { identifier }
 		} catch (e) {
@@ -38,38 +36,25 @@ module.exports = (ipcMain, modules) => {
 		}
 	})
 
-	ipcMain.on('open-parts-location-selector', (event, args) => {
-		console.log('ipc:open-parts-location-selector')
+	ipcMain.on('save-pdfs-to-filesystem', (event, args) => {
+		const { identifier, path, amount } = args
 
-		const { forIdentifier: identifier } = args
+		let error = null
+		let data = null
 
-		const options = {
-			title: 'Select Directory to save Parts',
-			buttonLabel: 'Save Parts',
-			defaultPath: app.getPath('documents'),
-			properties: ['openDirectory', 'createDirectory'],
-		}
-
-		dialog.showOpenDialog(null, options, filePaths => {
-			let error = null
-			let data = null
-
-			if (filePaths && filePaths.length) {
-				try {
-					const [filePath] = filePaths
-
-					data = saveSharePdfsToFileSystem(filePath, identifier)
-				} catch (e) {
-					error = e.message
-				}
-			} else {
-				error = 'No location selected.'
-			}
-
-			event.reply('parts-saved-to-filesystem', {
+		try {
+			data = saveSharePdfsToFileSystem(path, identifier, {
+				documentsToCopy: amount,
+				uniqueDestination: true,
+			})
+		} catch (e) {
+			console.log(e)
+			error = e
+		} finally {
+			event.reply('pdfs-saved-to-filesystem', {
 				error,
 				data,
 			})
-		})
+		}
 	})
 }

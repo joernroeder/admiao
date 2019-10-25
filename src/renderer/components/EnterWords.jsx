@@ -7,8 +7,6 @@ import styled from '@emotion/styled'
 import { css } from '@styled-system/css'
 import { space, height, border, color } from 'styled-system'
 
-//import css from '@styled-system/css';
-
 import SeedWordsList from './backup/enterseed/SeedWordsList' // todo move
 import SeedWordInput from './backup/enterseed/SeedWordInput' // todo move
 

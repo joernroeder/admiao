@@ -1,5 +1,6 @@
-import React, { forwardRef } from 'react'
+import { forwardRef } from 'react'
 import styled from '@emotion/styled' // todo makro
+
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 

@@ -18,33 +18,42 @@ const PrintTemplate = ({
 	const [templateOpened, setTemplateOpened] = useState(false)
 	const distributionDispatch = useDistributionDispatch()
 
-	console.log('templateIdentifier', templateIdentifier)
-
-	//todo  move to print sub component
 	const openTemplateInWindow = () => {
 		ipcRenderer.send('open-template', { identifier: templateIdentifier })
 	}
 
-	//todo  move to print sub component
-	ipcRenderer.once('template-opened', (event, args) => {
-		const { identifier, isOpen } = args
-
-		if (identifier !== templateIdentifier) {
+	useEffect(() => {
+		if (!templateIdentifier) {
 			return
 		}
 
-		if (isOpen) {
-			setTemplateOpened(true)
-			// push the identifier to the distribution store.
-			// this is used later to match generated parts with a distribution selection.
-			distributionDispatch({
-				type: 'SET_IDENTIFIER',
-				payload: templateIdentifier,
-			})
-		} else {
-			console.log('ERROR: file could not open file', identifier)
+		const onTemplateOpened = (event, args) => {
+			const { identifier, isOpen } = args
+
+			if (identifier !== templateIdentifier) {
+				return
+			}
+
+			if (isOpen) {
+				setTemplateOpened(true)
+
+				// push the identifier to the distribution store.
+				// this is used later to match generated parts with a distribution selection.
+				distributionDispatch({
+					type: 'SET_IDENTIFIER',
+					payload: templateIdentifier,
+				})
+			} else {
+				console.warn('ERROR: could not open file', identifier)
+			}
 		}
-	})
+
+		ipcRenderer.once('template-opened', onTemplateOpened)
+
+		return () => {
+			ipcRenderer.removeListener('template-opened', onTemplateOpened)
+		}
+	}, [distributionDispatch, ipcRenderer, templateIdentifier])
 
 	return (
 		<GridWrap flexDirection={'column'}>
@@ -59,7 +68,11 @@ const PrintTemplate = ({
 							afterwards.
 						</Text>
 
-						<Button mt={3} to={'../../enter-seed'}>
+						<Button
+							mt={3}
+							to={'../../enter-seed'}
+							variant={'filled'}
+						>
 							Yes, I've printed the templates
 						</Button>
 					</Cell>

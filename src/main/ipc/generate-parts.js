@@ -1,5 +1,13 @@
-const { generatePartsFor } = require('../slip39generator')
+const { app, dialog } = require('electron')
 
+const { generatePartsFor } = require('../slip39generator')
+const { saveSharePdfsToFileSystem } = require('../pdf/pdfGenerator')
+
+/**
+ * Generates slip39 shares for the passed in bip39 word seed and settings
+ * (@see seedPartsStore) and sends them back via `parts-generated` ipc message
+ * together with the passed in identifier.
+ */
 module.exports = (ipcMain, modules) => {
 	ipcMain.on('generate-parts', (event, args) => {
 		console.log(args)
@@ -7,7 +15,7 @@ module.exports = (ipcMain, modules) => {
 		const { requiredPartsT: required, uniquePartsN: total } = settings
 
 		const now = Date.now()
-		console.log('generating pdfs for shares')
+		console.log('generating shares for given words', words)
 
 		let data = null
 		let error = null
@@ -21,7 +29,7 @@ module.exports = (ipcMain, modules) => {
 		} catch (e) {
 			console.log(e)
 
-			error = e.message
+			error = e
 		} finally {
 			event.reply('parts-generated', {
 				error,
@@ -57,4 +65,40 @@ module.exports = (ipcMain, modules) => {
 		});
 	});
 	*/
+
+	ipcMain.on('open-parts-location-selector', (event, args) => {
+		console.log('ipc:open-parts-location-selector')
+
+		const { forIdentifier: identifier } = args
+
+		const options = {
+			title: 'Select Directory to save Parts',
+			buttonLabel: 'Save Parts',
+			defaultPath: app.getPath('documents'),
+			properties: ['openDirectory', 'createDirectory'],
+		}
+
+		dialog.showOpenDialog(null, options, filePaths => {
+			let error = null
+			let data = null
+
+			if (filePaths && filePaths.length) {
+				try {
+					const [filePath] = filePaths
+
+					data = saveSharePdfsToFileSystem(filePath, identifier)
+				} catch (e) {
+					console.warn(e)
+					error = e
+				}
+			} else {
+				error = new Error('No location selected.')
+			}
+
+			event.reply('parts-saved-to-filesystem', {
+				error,
+				data,
+			})
+		})
+	})
 }

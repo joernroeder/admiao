@@ -1,0 +1,311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Enter Seed it should render correctly 1`] = `
+.emotion-8 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: -8px;
+  margin-right: -8px;
+  background-color: rgba(0,0,0,1);
+  color: rgba(255,255,255,1);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 72px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: 14.285714285714285%;
+  width: 21.428571428571427%;
+}
+
+.emotion-0 {
+  color: rgba(255,255,255,1);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.3125rem;
+  line-height: 2rem;
+  -webkit-transform: translateY(0.5078125rem);
+  -ms-transform: translateY(0.5078125rem);
+  transform: translateY(0.5078125rem);
+  font-family: 'SpaceGrotesk',sans-serif;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    -webkit-transform: translateY(0.5625rem);
+    -ms-transform: translateY(0.5625rem);
+    transform: translateY(0.5625rem);
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-0 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    -webkit-transform: translateY(0.5625rem);
+    -ms-transform: translateY(0.5625rem);
+    transform: translateY(0.5625rem);
+  }
+}
+
+.emotion-7 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: 7.142857142857142%;
+  width: 35.714285714285715%;
+}
+
+.emotion-6 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 168px;
+}
+
+.emotion-2 {
+  color: rgba(255,255,255,1);
+  margin-bottom: 16px;
+  margin-top: 0;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  -webkit-transform: translateY(0.421875rem);
+  -ms-transform: translateY(0.421875rem);
+  transform: translateY(0.421875rem);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-3 {
+  color: rgba(0,0,0,1);
+  background-color: rgba(255,255,255,1);
+  margin-bottom: 32px;
+  margin-top: 0;
+  padding: 8px;
+  padding-left: 16px;
+  margin-right: -16px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  -webkit-transform: translateY(0.421875rem);
+  -ms-transform: translateY(0.421875rem);
+  transform: translateY(0.421875rem);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+  color: rgba(0,0,0,1);
+  background-color: rgba(255,255,255,1);
+}
+
+.emotion-5 {
+  border-width: 2px;
+  border-color: rgba(255,255,255,1);
+  border-style: solid;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  -webkit-transform: translateY(0.421875rem);
+  -ms-transform: translateY(0.421875rem);
+  transform: translateY(0.421875rem);
+  color: rgba(255,255,255,1);
+  background-color: transparent;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
+.emotion-5 .icon {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-5:hover .icon {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-5:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-5:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-5:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-5 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-4 {
+  background-color: rgba(255,255,255,0.15);
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-4,
+*:focus > .emotion-4 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
+<div
+  class="emotion-8"
+>
+  <div
+    class="emotion-1"
+  >
+    <div
+      role="group"
+      style="outline: none;"
+      tabindex="-1"
+    >
+      <h2
+        class="emotion-0"
+        color="black"
+        font-size="1,2,2"
+      >
+        Enter Seed
+      </h2>
+    </div>
+  </div>
+  <div
+    class="emotion-7"
+  >
+    <div
+      role="group"
+      style="outline: none;"
+      tabindex="-1"
+    >
+      <div
+        class="emotion-6"
+      >
+        <p
+          class="emotion-2"
+          color="black"
+          font-size="0"
+        >
+          In the following section you will asked to enter the words of your seed one by one. Make sure no human or robot looks over your shoulder or at your screen.
+        </p>
+        <p
+          class="emotion-3"
+          color="white"
+          font-size="0"
+        >
+          <strong>
+            Remember:
+          </strong>
+           This should be the only time you
+           
+          <u>
+            ever ever
+          </u>
+           type those words into a computer apart from restoring purposes.
+        </p>
+        <a
+          class="emotion-5"
+          href="//enter"
+        >
+          <span>
+            Yes, i am alone.
+             
+            <span
+              class="icon next"
+            >
+              →
+            </span>
+          </span>
+          <span
+            class="emotion-4"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

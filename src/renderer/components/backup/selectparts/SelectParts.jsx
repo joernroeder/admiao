@@ -29,7 +29,7 @@ const SelectParts = () => {
 	return (
 		<GridWrap
 			flexDirection={'column'}
-			justifyContent={'_space-around'}
+			justifyContent={'center'}
 			height={'100vh'}
 		>
 			<Cell gridOffset={1} gridColumn={4}>
@@ -100,7 +100,11 @@ const SelectParts = () => {
 			<Cell>
 				<GridWrap justifyContent={'flex-end'} mt={7}>
 					<Cell>
-						<Button to={'../confirm-selection'} mb={[4, 6, 8]}>
+						<Button
+							to={'../confirm-selection'}
+							mb={[4, 6, 8]}
+							variant={'filled'}
+						>
 							Continue
 						</Button>
 					</Cell>

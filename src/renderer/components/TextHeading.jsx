@@ -11,7 +11,7 @@ const TextHeading = styled.h3`
 	${space};
 	${textAlign};
 	${verticalRhythm};
-	//font-family: 'SpaceGrotesk', sans-serif;
+
 	letter-spacing: 0.015em;
 	text-rendering: geometricPrecision;
 	-webkit-font-smoothing: antialiased;

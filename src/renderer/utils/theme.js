@@ -41,7 +41,7 @@ const {
 		Lato: 0.73,
 		SpaceGrotesk: 0.75,
 	},
-	debug: true,
+	debug: false,
 })
 
 const rhythms = rhythmTheme.createRhythms('SpaceGrotesk', [
@@ -149,6 +149,8 @@ export const theme = {
 		//lightGray: '#d8d8d8',
 		grayText: '#9a9a9a',
 		gray: '#262626',
+		whiteTransparent: 'rgba(255,255,255,0.3)',
+		blackTransparent: 'rgba(0,0,0,0.1)',
 	},
 	fontWeight,
 }
@@ -157,8 +159,10 @@ export const darkTheme = {
 	...theme,
 	colors: {
 		...theme.colors,
-		black: 'rgba(255,255,255, 0.8)',
-		white: 'rgba(0,0,0, 0.8)',
+		black: 'rgba(255,255,255, 1)',
+		white: 'rgba(0,0,0, 1)',
 		lightGray: '#262626',
+		whiteTransparent: 'rgba(0, 0, 0, 0.15)',
+		blackTransparent: 'rgba(255, 255, 255, 0.15)',
 	},
 }

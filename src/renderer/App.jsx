@@ -8,6 +8,8 @@ import { fontStyle, theme, verticalRhythmStyle } from './utils/theme'
 import { SeedPartsProvider } from './store/SeedPartsStore'
 import { SeedWordsProvider } from './store/SeedWordsStore'
 import { DistributionProvider } from './store/DistributionStore'
+import { GeneratedPartsProvider } from './store/GeneratedPartsStore'
+import { GeneratorStateProvider } from './store/GeneratorState'
 
 import Intro from './components/Intro'
 import BackupIntro from './components/backup/BackupIntro'
@@ -23,7 +25,8 @@ import PrepareDrives from './components/backup/PrepareDrives'
 import EnterSeedView from './components/backup/EnterSeedView'
 import Generate from './components/backup/Generate'
 import WriteDownView from './components/backup/generateparts/distributelocal/WriteDownView'
-import { GeneratedPartsProvider } from './store/GeneratedPartsStore'
+import DistributeRemote from './components/backup/generateparts/distributeremote/DistributeRemote'
+
 import BackupOutro from './components/backup/BackupOutro'
 
 const NestedRoute = ({ children }) => <div>{children}</div>
@@ -39,7 +42,11 @@ const CreateBackupProviderRoute = ({ children }) => {
 }
 
 const UseGeneratedPartsStoreRoute = ({ children }) => {
-	return <GeneratedPartsProvider>{children}</GeneratedPartsProvider>
+	return (
+		<GeneratedPartsProvider>
+			<GeneratorStateProvider>{children}</GeneratorStateProvider>
+		</GeneratedPartsProvider>
+	)
 }
 
 const App = () => {
@@ -69,6 +76,7 @@ const App = () => {
 						<UseGeneratedPartsStoreRoute path="generate">
 							<Generate path="/" />
 							<WriteDownView path="distribute-local/*" />
+							<DistributeRemote path="distribute-remote" />
 						</UseGeneratedPartsStoreRoute>
 						<BackupOutro path="done" />
 					</CreateBackupProviderRoute>

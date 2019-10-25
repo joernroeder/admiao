@@ -22,7 +22,7 @@ const wordList = raw('../../../../wordlists/slip39/english.txt')
 
 const ConfirmPart = ({ partIndex }) => {
 	const index = parseInt(partIndex)
-	const { parts, confirmed } = useGeneratedParts()
+	const { parts } = useGeneratedParts()
 	/*
 	const parts = [
 		"lecture category academic leaf agree body painting survive floral spray language visitor dress",
@@ -134,7 +134,11 @@ const ConfirmPart = ({ partIndex }) => {
 		return (
 			<>
 				{allPartsConfirmed ? (
-					<Button onClick={onConfirmPart} to={'/create/done'}>
+					<Button
+						onClick={onConfirmPart}
+						to={'/create/done'}
+						variant={'filled'}
+					>
 						Done!
 					</Button>
 				) : (
@@ -142,7 +146,7 @@ const ConfirmPart = ({ partIndex }) => {
 						onClick={onConfirmPart}
 						to={`../../copy/${index + 1}`}
 					>
-						Continue with next Part
+						Continue with next Share
 					</Button>
 				)}
 			</>
@@ -151,7 +155,7 @@ const ConfirmPart = ({ partIndex }) => {
 
 	return (
 		<Box mt={19}>
-			<TextHeading>CONFIRM Part {index + 1}</TextHeading>
+			<TextHeading>Confirm Share {index + 1}</TextHeading>
 
 			<EnterWords
 				dispatch={dispatch}

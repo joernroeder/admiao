@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BackupIntro view to have headline, description and button 1`] = `
-.emotion-12 {
+.emotion-13 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: _space-around;
-  -webkit-justify-content: _space-around;
-  -ms-flex-pack: _space-around;
-  justify-content: _space-around;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
   height: 100vh;
   margin-left: -4px;
   margin-right: -4px;
@@ -144,7 +144,7 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
   font-variant-ligatures: common-ligatures;
 }
 
-.emotion-10 {
+.emotion-11 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -163,7 +163,7 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
   display: flex;
 }
 
-.emotion-7 {
+.emotion-8 {
   border-width: 2px;
   border-color: black;
   border-style: solid;
@@ -183,48 +183,112 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
   -webkit-transform: 0;
   -ms-transform: 0;
   transform: 0;
-  color: black;
-  background-color: transparent;
+  color: white;
+  background-color: black;
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: 700;
   box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
+  cursor: pointer;
 }
 
 @media screen and (min-width:40em) {
-  .emotion-7 {
+  .emotion-8 {
     margin-bottom: 128px;
   }
 }
 
 @media screen and (min-width:52em) {
-  .emotion-7 {
+  .emotion-8 {
     margin-bottom: 512px;
   }
 }
 
-.emotion-7 .arrow {
+.emotion-8 .icon {
   display: inline-block;
-  margin-left: 0.5em;
   -webkit-transition: -webkit-transform 0.25s ease-in;
   -webkit-transition: transform 0.25s ease-in;
   transition: transform 0.25s ease-in;
 }
 
-.emotion-7:hover .arrow {
-  -webkit-transform: translateX(0.30em);
-  -ms-transform: translateX(0.30em);
-  transform: translateX(0.30em);
+.emotion-8:hover .icon {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
 }
 
-.emotion-9 {
+.emotion-8:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-8:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-8:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-8 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-7 {
+  background-color: whiteTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-7,
+*:focus > .emotion-7 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
+.emotion-10 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -234,7 +298,7 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
 }
 
 <div
-  class="emotion-12"
+  class="emotion-13"
 >
   <div
     class="emotion-6"
@@ -274,25 +338,31 @@ exports[`BackupIntro view to have headline, description and button 1`] = `
     class="emotion-6"
   >
     <div
-      class="emotion-10"
+      class="emotion-11"
     >
       <div
         class="emotion-6"
       >
         <a
-          class="emotion-7"
+          class="emotion-8"
           href="//select-parts"
         >
-          Start Backup
-          <span
-            class="arrow"
-          >
-            →
+          <span>
+            Start Backup
+             
+            <span
+              class="icon next"
+            >
+              →
+            </span>
           </span>
+          <span
+            class="emotion-7"
+          />
         </a>
       </div>
       <div
-        class="emotion-9"
+        class="emotion-10"
       />
     </div>
   </div>

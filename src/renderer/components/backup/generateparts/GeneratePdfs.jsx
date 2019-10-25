@@ -8,16 +8,14 @@ import Text from '../../Text'
 import { generatePdfsViaIpc } from './pdfGeneratorHelper'
 
 import { useSeedWordsDispatch } from '../../../store/SeedWordsStore'
+import { useGeneratorState, STATES } from '../../../store/GeneratorState'
 
-const GeneratePdfs = ({
-	children,
-	generatorState,
-	setGeneratorState,
-	STATES,
-	words,
-	seedPartsState,
-}) => {
-	const isLoading = generatorState.state === STATES.loading
+import SuccessfullyGeneratedPdfs from './SuccessfullyGeneratedPdfs'
+import SuccessfullySavedToDisk from './filesystem/SuccessfullySavedToDisk'
+
+const GeneratePdfs = ({ children, words, seedPartsState }) => {
+	const [generatorState, setGeneratorState] = useGeneratorState()
+	console.log('generatorState.state', generatorState.state)
 	const { uniquePartsN } = seedPartsState
 
 	const seedWordsDispatch = useSeedWordsDispatch()
@@ -50,7 +48,6 @@ const GeneratePdfs = ({
 			}
 		})()
 	}, [
-		STATES,
 		generatorState,
 		generatorState.state,
 		seedPartsState,
@@ -59,47 +56,57 @@ const GeneratePdfs = ({
 		words,
 	])
 
+	const isLoadingComponent = (
+		<GridWrap>
+			<Cell gridOffset={3} mt={23} gridColumn={6}>
+				<SubHeading>Generating {uniquePartsN}&nbsp;PDFs</SubHeading>
+				<Text mt={3}>Todo...</Text>
+			</Cell>
+		</GridWrap>
+	)
+
+	const debugComponent = (
+		<GridWrap>
+			<Cell gridOffset={4} mt={3} gridColumn={3}>
+				{
+					/*{generatorState.state}:{generatorState.error} :{' '}
+				{generatorState.pendingIdentifier}*/ ''
+				}
+			</Cell>
+		</GridWrap>
+	)
+
+	let component = (() => {
+		switch (generatorState.state) {
+			case STATES.successfullyGenerated: {
+				return (
+					<SuccessfullyGeneratedPdfs uniquePartsN={uniquePartsN}>
+						{children}
+					</SuccessfullyGeneratedPdfs>
+				)
+			}
+
+			case STATES.successfullyDistributed: {
+				// todo switch between fs and drives
+				return (
+					<SuccessfullySavedToDisk
+						uniquePartsN={uniquePartsN}
+						generatorState={generatorState}
+					/>
+				)
+			}
+
+			case STATES.loading:
+			default: {
+				return isLoadingComponent
+			}
+		}
+	})()
+
 	return (
 		<>
-			{isLoading ? (
-				<GridWrap>
-					<Cell gridOffset={3} mt={23} gridColumn={6}>
-						<SubHeading>
-							Generating {uniquePartsN}&nbsp;PDFs
-						</SubHeading>
-						<Text mt={3}>Todo...</Text>
-					</Cell>
-				</GridWrap>
-			) : (
-				<>
-					<GridWrap>
-						<Cell gridOffset={3} mt={14} gridColumn={6}>
-							<SubHeading>
-								{uniquePartsN}&nbsp;PDFs successfully generated!
-							</SubHeading>
-						</Cell>
-					</GridWrap>
-					<GridWrap>
-						<Cell gridOffset={4} mt={3} gridColumn={3}>
-							<Text>
-								Maecenas faucibus mollis interdum. Nullam id
-								dolor id nibh ultricies vehicula ut id elit.
-							</Text>
-						</Cell>
-					</GridWrap>
-					<GridWrap>
-						<Cell gridOffset={4} mt={3} gridColumn={3}>
-							{children}
-						</Cell>
-					</GridWrap>
-				</>
-			)}
-			<GridWrap>
-				<Cell gridOffset={4} mt={3} gridColumn={3}>
-					{generatorState.state}:{generatorState.error} :{' '}
-					{generatorState.pendingIdentifier}
-				</Cell>
-			</GridWrap>
+			{component}
+			{debugComponent}
 		</>
 	)
 }

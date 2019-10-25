@@ -11,7 +11,7 @@ import Cell from '../Cell'
 import SubHeading from '../SubHeading'
 import Text from '../Text'
 import TextHeading from '../TextHeading'
-import Button from '../Button'
+import Button, { Directions } from '../Button'
 import PieChart from '../PieChart'
 
 const ConfirmSelection = props => {
@@ -43,7 +43,7 @@ const ConfirmSelection = props => {
 	}
 
 	return (
-		<GridWrap>
+		<GridWrap height={'100vh'} alignItems={'center'} pb={14}>
 			<Cell
 				gridOffset={2}
 				gridColumn={3}
@@ -62,7 +62,12 @@ const ConfirmSelection = props => {
 					Donec ullamcorper nulla non metus auctor fringilla. Duis
 					mollis, est non commodo luctus, nisi erat porttitor ligula?
 				</Text>
-				<Button to={'../select-parts'} showArrow={false} mr={3}>
+				<Button
+					to={'../select-parts'}
+					showArrow={false}
+					direction={Directions.BACKWARDS}
+					mr={3}
+				>
 					Nope, go back.
 				</Button>
 				<Button

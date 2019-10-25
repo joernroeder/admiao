@@ -14,16 +14,33 @@ const printer = new PdfPrinter(fonts)
 const docDefinition = {
 	...styles,
 	permissions,
-	pageMargins: [70, 70, 100, 100],
 }
 
 const options = {
 	// ...
 }
 
+const getFileName = ({ identifier, index }) => {
+	return `${identifier}-share-${index + 1}.pdf`
+}
+
 // --- storage ---
 
 const pdfStorage = new Map()
+
+const getDocumentCountByIdentifier = identifier => {
+	let counter = 0
+
+	for (const [meta] of pdfStorage) {
+		if (meta.identifier !== identifier) {
+			continue
+		}
+
+		counter++
+	}
+
+	return counter
+}
 
 const getFirstFromStorage = identifier => {
 	for (const [meta, document] of pdfStorage) {
@@ -43,29 +60,16 @@ const generateSharePdf = (identifier, index, share, settings = {}) => {
 	const pdfDoc = printer.createPdfKitDocument(
 		{
 			...docDefinition,
-			content: getSharePdfContent(share),
+			content: getSharePdfContent({ ...settings, share }),
 		},
 		options
 	)
-
-	/*
-	if (useManagedDisks) {
-
-	}
-	else {
-		const pdfPath = `./pdf-shares/${identifier}-share-${index + 1}.pdf`;
-
-		pdfDoc.pipe(fs.createWriteStream(pdfPath));
-		pdfDoc.end();
-
-		return pdfPath;
-	}*/
 
 	return {
 		meta: {
 			identifier,
 			index,
-			fileName: `${identifier}-share-${index + 1}.pdf`,
+			fileName: getFileName({ identifier, index }),
 			fileId: uuidv4(),
 			settings,
 		},
@@ -75,14 +79,7 @@ const generateSharePdf = (identifier, index, share, settings = {}) => {
 
 const generateSharePdfs = (data, settings) => {
 	const exportIdentifier = uuidv4()
-	/*
-    const identifier = crypto
-        .createHash('sha256')
-        .update(JSON.stringify(data))
-        .digest('hex');
-    */
 
-	console.log('data --->', data)
 	data.forEach((groupOrShare, index) => {
 		if (typeof groupOrShare === 'string') {
 			const { meta, document } = generateSharePdf(
@@ -165,9 +162,8 @@ const saveDocumentToPath = async (pathToSaveTo, identifier) => {
 		console.log(identifier)
 		const [meta, document] = getFirstFromStorage(identifier)
 
-		console.log({ meta, document })
-
 		if (!document) {
+			// todo unify api { copied: false }?
 			return resolve(false)
 		}
 
@@ -176,6 +172,7 @@ const saveDocumentToPath = async (pathToSaveTo, identifier) => {
 		document.pipe(fs.createWriteStream(path.join(pathToSaveTo, fileName)))
 		document.on('end', () => {
 			pdfStorage.delete(meta)
+			// todo unify api { copied: true }?
 			resolve(true)
 		})
 
@@ -185,15 +182,43 @@ const saveDocumentToPath = async (pathToSaveTo, identifier) => {
 
 // --- Generated PDfs Storage ---
 
-const saveSharePdfsToFileSystem = (savePdfsTo, identifier) => {
-	console.log('todo: saving to fs', savePdfsTo, identifier)
+const saveSharePdfsToFileSystem = (savePdfsTo, identifier, options = {}) => {
+	console.log('saving to fs', savePdfsTo, identifier, options)
+	const { documentsToCopy = 0, uniqueDestination = false } = options
+
 	if (!savePdfsTo || !fs.existsSync(savePdfsTo)) {
-		throw new Error(
+		const error = new Error(
 			!savePdfsTo
-				? 'No directory selected'
-				: 'Selected directory does not exist.'
+				? 'No directory given'
+				: `Given directory ${savePdfsTo} does not exist.`
 		)
+		error.code = 'NON_EXISTING_PATH'
+
+		throw error
 	}
+
+	// check that no other files containing the given identifier are present at the
+	// `savePdfsTo` destination path.
+	/*
+	 todo this could be optimized to do a glob savePdfsTo/**\/*.pdf search but i
+	dont want to play a cat and mouse game here.
+	 */
+	if (uniqueDestination) {
+		const containsFilesWithIdentifier = fs
+			.readdirSync(savePdfsTo)
+			.some(file => file.includes(identifier))
+
+		if (containsFilesWithIdentifier) {
+			const error = new Error(
+				`Given path already contains files with the given identifier: ${identifier} ${savePdfsTo}`
+			)
+			error.code = 'REPEATED_DRIVE'
+
+			throw error
+		}
+	}
+
+	let copiedDocuments = 0
 
 	for (const [meta, document] of pdfStorage) {
 		if (meta.identifier !== identifier) {
@@ -201,20 +226,32 @@ const saveSharePdfsToFileSystem = (savePdfsTo, identifier) => {
 			continue
 		}
 
-		const { fileName } = meta
+		// limit loop to passed in `documentsToCopy` param
+		if (documentsToCopy > 0 && copiedDocuments === documentsToCopy) {
+			break
+		}
 
-		//const pdfPath = `./pdf-shares/${fileName}`;
+		const { fileName } = meta
 		const pdfPath = path.join(savePdfsTo, fileName)
 
+		// write pdf
 		document.pipe(fs.createWriteStream(pdfPath))
 		document.end()
 
+		// remove from storage
 		pdfStorage.delete(meta)
+
+		copiedDocuments++
 	}
 
-	console.log('pdfStorage.size', pdfStorage.size)
+	const pendingDocuments = getDocumentCountByIdentifier(identifier)
 
-	return { identifier, pendingDocuments: pdfStorage.size }
+	return {
+		identifier,
+		pendingDocuments,
+		copiedDocuments,
+		savedToPath: savePdfsTo,
+	}
 }
 
 module.exports = {

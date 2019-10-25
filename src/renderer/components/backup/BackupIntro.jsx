@@ -11,7 +11,7 @@ const BackupIntro = () => {
 		<>
 			<GridWrap
 				flexDirection={'column'}
-				justifyContent={'_space-around'}
+				justifyContent={'space-around'}
 				height={'100vh'}
 			>
 				<Cell>
@@ -34,7 +34,11 @@ const BackupIntro = () => {
 				<Cell>
 					<GridWrap justifyContent={'flex-end'} mt={9}>
 						<Cell>
-							<Button to={'./select-parts'} mb={[4, 6, 8]}>
+							<Button
+								to={'./select-parts'}
+								variant={'filled'}
+								mb={[4, 6, 8]}
+							>
 								Start Backup
 							</Button>
 						</Cell>

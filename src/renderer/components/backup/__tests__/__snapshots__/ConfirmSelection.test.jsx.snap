@@ -1,10 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Confirm Selection part selection should be displayed correctly correctly display 2 of 3 1`] = `
-.emotion-8 {
+.emotion-10 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  height: 100vh;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 14px;
   margin-left: -4px;
   margin-right: -4px;
   background-color: white;
@@ -13,6 +19,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
 }
 
 .emotion-2 {
@@ -59,7 +66,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   font-variant-ligatures: common-ligatures;
 }
 
-.emotion-7 {
+.emotion-9 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -124,7 +131,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   font-variant-ligatures: common-ligatures;
 }
 
-.emotion-5 {
+.emotion-6 {
   border-width: 2px;
   border-color: black;
   border-style: solid;
@@ -151,29 +158,93 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   text-decoration: none;
   font-weight: 700;
   box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
+  cursor: pointer;
 }
 
-.emotion-5 .arrow {
+.emotion-6 .icon {
   display: inline-block;
-  margin-left: 0.5em;
   -webkit-transition: -webkit-transform 0.25s ease-in;
   -webkit-transition: transform 0.25s ease-in;
   transition: transform 0.25s ease-in;
 }
 
-.emotion-5:hover .arrow {
-  -webkit-transform: translateX(0.30em);
-  -ms-transform: translateX(0.30em);
-  transform: translateX(0.30em);
+.emotion-6:hover .icon {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
 }
 
-.emotion-6 {
+.emotion-6:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-6:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-6:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-6 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-5 {
+  background-color: blackTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-5,
+*:focus > .emotion-5 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
+.emotion-8 {
   border-width: 2px;
   border-color: black;
   border-style: solid;
@@ -199,30 +270,94 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   text-decoration: none;
   font-weight: 700;
   box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
+  cursor: pointer;
 }
 
-.emotion-6 .arrow {
+.emotion-8 .icon {
   display: inline-block;
-  margin-left: 0.5em;
   -webkit-transition: -webkit-transform 0.25s ease-in;
   -webkit-transition: transform 0.25s ease-in;
   transition: transform 0.25s ease-in;
 }
 
-.emotion-6:hover .arrow {
-  -webkit-transform: translateX(0.30em);
-  -ms-transform: translateX(0.30em);
-  transform: translateX(0.30em);
+.emotion-8:hover .icon {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
 }
 
+.emotion-8:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-8:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-8:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-8 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-7 {
+  background-color: whiteTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-7,
+*:focus > .emotion-7 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
 <div
-  class="emotion-8"
+  class="emotion-10"
 >
   <div
     class="emotion-2"
@@ -269,7 +404,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
     </p>
   </div>
   <div
-    class="emotion-7"
+    class="emotion-9"
   >
     <h2
       class="emotion-3"
@@ -286,31 +421,54 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
       Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula?
     </p>
     <a
-      class="emotion-5"
+      class="emotion-6"
       href="/select-parts"
     >
-      Nope, go back.
+      <span>
+        <span
+          class="icon prev"
+        >
+          ←
+        </span>
+         
+        Nope, go back.
+      </span>
+      <span
+        class="emotion-5"
+      />
     </a>
     <a
-      class="emotion-6"
+      class="emotion-8"
       href="/how-to-distribute"
     >
-      Yes, looks good!
-      <span
-        class="arrow"
-      >
-        →
+      <span>
+        Yes, looks good!
+         
+        <span
+          class="icon next"
+        >
+          →
+        </span>
       </span>
+      <span
+        class="emotion-7"
+      />
     </a>
   </div>
 </div>
 `;
 
 exports[`Confirm Selection part selection should be displayed correctly correctly display 5 of 8 1`] = `
-.emotion-8 {
+.emotion-10 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
+  height: 100vh;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-bottom: 14px;
   margin-left: -4px;
   margin-right: -4px;
   background-color: white;
@@ -319,6 +477,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  height: 100vh;
 }
 
 .emotion-2 {
@@ -365,7 +524,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   font-variant-ligatures: common-ligatures;
 }
 
-.emotion-7 {
+.emotion-9 {
   box-sizing: border-box;
   margin: 0;
   min-width: 0;
@@ -430,7 +589,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   font-variant-ligatures: common-ligatures;
 }
 
-.emotion-5 {
+.emotion-6 {
   border-width: 2px;
   border-color: black;
   border-style: solid;
@@ -457,29 +616,93 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   text-decoration: none;
   font-weight: 700;
   box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
+  cursor: pointer;
 }
 
-.emotion-5 .arrow {
+.emotion-6 .icon {
   display: inline-block;
-  margin-left: 0.5em;
   -webkit-transition: -webkit-transform 0.25s ease-in;
   -webkit-transition: transform 0.25s ease-in;
   transition: transform 0.25s ease-in;
 }
 
-.emotion-5:hover .arrow {
-  -webkit-transform: translateX(0.30em);
-  -ms-transform: translateX(0.30em);
-  transform: translateX(0.30em);
+.emotion-6:hover .icon {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
 }
 
-.emotion-6 {
+.emotion-6:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-6:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-6:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-6 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-5 {
+  background-color: blackTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-5,
+*:focus > .emotion-5 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
+.emotion-8 {
   border-width: 2px;
   border-color: black;
   border-style: solid;
@@ -505,30 +728,94 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
   text-decoration: none;
   font-weight: 700;
   box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
+  cursor: pointer;
 }
 
-.emotion-6 .arrow {
+.emotion-8 .icon {
   display: inline-block;
-  margin-left: 0.5em;
   -webkit-transition: -webkit-transform 0.25s ease-in;
   -webkit-transition: transform 0.25s ease-in;
   transition: transform 0.25s ease-in;
 }
 
-.emotion-6:hover .arrow {
-  -webkit-transform: translateX(0.30em);
-  -ms-transform: translateX(0.30em);
-  transform: translateX(0.30em);
+.emotion-8:hover .icon {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   -webkit-transition-duration: 0.15s;
   transition-duration: 0.15s;
 }
 
+.emotion-8:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-8:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-8:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-8 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-7 {
+  background-color: whiteTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-7,
+*:focus > .emotion-7 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
 <div
-  class="emotion-8"
+  class="emotion-10"
 >
   <div
     class="emotion-2"
@@ -605,7 +892,7 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
     </p>
   </div>
   <div
-    class="emotion-7"
+    class="emotion-9"
   >
     <h2
       class="emotion-3"
@@ -622,21 +909,38 @@ exports[`Confirm Selection part selection should be displayed correctly correctl
       Donec ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat porttitor ligula?
     </p>
     <a
-      class="emotion-5"
+      class="emotion-6"
       href="/select-parts"
     >
-      Nope, go back.
+      <span>
+        <span
+          class="icon prev"
+        >
+          ←
+        </span>
+         
+        Nope, go back.
+      </span>
+      <span
+        class="emotion-5"
+      />
     </a>
     <a
-      class="emotion-6"
+      class="emotion-8"
       href="/how-to-distribute"
     >
-      Yes, looks good!
-      <span
-        class="arrow"
-      >
-        →
+      <span>
+        Yes, looks good!
+         
+        <span
+          class="icon next"
+        >
+          →
+        </span>
       </span>
+      <span
+        class="emotion-7"
+      />
     </a>
   </div>
 </div>

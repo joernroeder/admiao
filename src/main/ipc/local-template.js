@@ -20,7 +20,7 @@ module.exports = (ipcMain, modules) => {
 
 			data = { identifier }
 		} catch (e) {
-			error = e.message
+			error = e
 		} finally {
 			event.reply('template-generated', {
 				error,

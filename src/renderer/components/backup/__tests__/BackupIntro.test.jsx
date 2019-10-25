@@ -6,7 +6,7 @@ import BackupIntro from '../BackupIntro'
 
 describe('BackupIntro view', () => {
 	test('to have headline, description and button', () => {
-		const { getByText, container } = render(<BackupIntro />)
+		const { getByText, container, debug } = render(<BackupIntro />)
 
 		// headline
 		expect(getByText('Backup Seed')).toBeInTheDocument()

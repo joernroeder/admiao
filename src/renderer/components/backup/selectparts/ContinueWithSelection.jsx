@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex } from 'reflexbox'
+import { Flex } from 'reflexbox'
 
 import {
 	useSeedPartsState,
@@ -9,7 +9,7 @@ import {
 import GridWrap from '../../GridWrap'
 import Cell from '../../Cell'
 import SubHeading from '../../SubHeading'
-import Button from '../../Button'
+import Button, { Directions } from '../../Button'
 import Text from '../../Text'
 import TextHeading from '../../TextHeading'
 import CurrentValue from './partselector/CurrentValue'
@@ -76,14 +76,18 @@ const ContinueWithSelection = () => {
 					</Flex>
 				</Flex>
 
-				<Box mt={5}>
-					<Button onClick={resetSelection} mr={2} showArrow={false}>
+				<Flex mt={5}>
+					<Button
+						onClick={resetSelection}
+						mr={2}
+						direction={Directions.ABORT}
+					>
 						No, i want to start over
 					</Button>
 					<Button to={nextButtonUrl} variant={'filled'}>
 						Yes, continue seed backup!
 					</Button>
-				</Box>
+				</Flex>
 			</Cell>
 		</GridWrap>
 	)

@@ -1,8 +1,7 @@
-import React from 'react'
-
-//import 'styled-components/macro'; // todo makro
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+
+//import 'styled-components/macro'; // todo makro
 
 import css from '@styled-system/css'
 

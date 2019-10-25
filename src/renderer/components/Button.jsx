@@ -18,23 +18,38 @@ import {
 	verticalRhythmProps,
 } from '../utils/styled-system-rhythm'
 
-// --- styles ---
+import transition from '../utils/transition'
 
-const arrow = `
-	.arrow {
+// --- arrow styles ---
+
+const arrowTranslateX = 0.4
+
+export const iconStyle = `
+	.icon {
 		display: inline-block;
-    	margin-left: 0.5em;
-    	transition: transform 0.25s ease-in;
+    	${transition.default(['transform'])}
     }
     
     &:hover {
-    	.arrow {
-    		transform: translateX(0.30em);
-    		transition-timing-function: ease-out;
-    		transition-duration: 0.15s;
+    	.icon {
+    		${transition.hover()}
+    	}
+    	
+    	.icon.next {
+    		transform: translateX(${arrowTranslateX}em);
+    	}
+    	
+    	.icon.prev {
+    		transform: translateX(${-arrowTranslateX}em);
+    	}
+    	
+    	.icon.flip {
+    		transform: rotate(90deg);
     	}
     }
 `
+
+// --- variants styles ---
 
 const variants = {
 	variants: {
@@ -49,27 +64,114 @@ const variants = {
 	},
 }
 
-const ButtonEl = styled.button`
-	${border};
-	${color};
-	${space};
-	${width};
-	${height};
-	${typography};
-	${verticalRhythm};
-	${variant(variants)};
-	//background: none;
-	display: inline-block;
-	box-sizing: border-box;
-	font-weight: 700;
-	text-rendering: geometricPrecision;
-	-webkit-font-smoothing: antialiased;
+const hoverVariants = {
+	variants: {
+		outlined: {
+			bg: 'blackTransparent',
+		},
+		filled: {
+			bg: 'whiteTransparent',
+		},
+		white: {
+			bg: 'blackTransparent',
+		},
+		black: {
+			bg: 'whiteTransparent',
+		},
+	},
+}
 
-	cursor: ${({ onClick }) => (onClick ? 'pointer' : 'default')};
-	${arrow};
+// --- hover styles ---
+
+export const Directions = {
+	FORWARD: 'FORWARD',
+	BACKWARDS: 'BACKWARDS',
+	UP: 'UP',
+	DOWN: 'DOWN',
+	ABORT: 'ABORT',
+	NONE: 'NONE',
+}
+
+const isHorizontal = direction => {
+	return [Directions.FORWARD, Directions.BACKWARDS].includes(direction)
+}
+
+const HoverBg = styled('span', {
+	shouldForwardProp: isPropValid,
+})`
+	${variant(hoverVariants)};
+
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	opacity: 0;
+
+	transform: skew(
+			${({ direction }) => {
+				return isHorizontal(direction) ? '-14deg' : 0
+			}},
+			0
+		)
+		translateX(
+			${({ direction }) => {
+				const offsetX = 10
+
+				if (!isHorizontal(direction)) {
+					return 0
+				}
+				const flip = Directions.FORWARD === direction ? -1 : 1
+
+				return (100 + offsetX) * flip
+			}}%
+		)
+		translateY(
+			${({ direction }) => {
+				if (isHorizontal(direction)) {
+					return 0
+				}
+
+				if ([Directions.ABORT, Directions.DOWN].includes(direction)) {
+					return -100
+				}
+
+				return 100
+			}}%
+		);
+
+	${transition.default(['transform', 'opacity'])};
+
+	*:hover > &,
+	*:focus > & {
+		opacity: 1;
+		${transition.hover()};
+		transform: translateX(
+				${({ direction }) => {
+					if (!isHorizontal(direction)) {
+						return 0
+					}
+
+					const flip = direction === Directions.FORWARD ? -1 : 1
+
+					return `${(arrowTranslateX + 1.5) * flip}em`
+				}}
+			)
+			translateY(0)
+			skew(
+				${({ direction }) => {
+					return isHorizontal(direction) ? '-14deg' : 0
+				}},
+				0
+			);
+	}
 `
 
-const StyledLink = styled(Link, {
+// --- button styles ---
+
+const StyledButton = styled(Link, {
 	shouldForwardProp: isPropValid,
 })`
 	${border};
@@ -80,21 +182,39 @@ const StyledLink = styled(Link, {
 	${typography};
 	${verticalRhythm};
 	${variant(variants)};
-	//background: none;
+
 	display: inline-block;
 	text-decoration: none;
 	font-weight: 700;
-	//background: black;
 	box-sizing: border-box;
+	position: relative;
+	z-index: 10;
+	overflow: hidden;
+	justify-content: space-between;
 
 	text-rendering: geometricPrecision;
 	-webkit-font-smoothing: antialiased;
-	${arrow};
+	cursor: pointer;
+
+	${iconStyle};
+
+	& > span:first-of-type {
+		position: relative;
+		z-index: 10;
+		display: flex;
+		justify-content: space-between;
+	}
 `
 
-// --- props ---
+// --- defaults ---
 
-const defaultProps = {
+const defaultVariant = 'outlined'
+
+HoverBg.defaultProps = {
+	variant: defaultVariant,
+}
+
+StyledButton.defaultProps = {
 	...verticalRhythmProps([0]),
 	//color: 'black',
 	borderWidth: 2,
@@ -103,33 +223,71 @@ const defaultProps = {
 	px: 2,
 	py: 1,
 	letterSpacing: '0.025em',
-	variant: 'outlined',
 }
 
-ButtonEl.defaultProps = defaultProps
-StyledLink.defaultProps = defaultProps
-
+/*
+ todo test if i makes sense to include useAutoFocus for 'filled' variant as they
+ tend to be used for primary interactions without other dependencies.
+ */
 const Button = props => {
-	const nextArrow = props.showArrow ? <span className="arrow">→</span> : null
+	const { direction, variant, to, children } = props
 
-	if (props.to) {
-		return (
-			<StyledLink {...props}>
-				{props.children}
-				{nextArrow}
-			</StyledLink>
+	const [prevIcon, nextIcon] = (() => {
+		const nextArrow = (
+			<>
+				&nbsp;<span className="icon next">→</span>
+			</>
 		)
-	}
+		const prevArrow = (
+			<>
+				<span className="icon prev">←</span>&nbsp;
+			</>
+		)
+		const abortIcon = (
+			<>
+				<span className="icon flip cross">&times;</span>&nbsp;
+			</>
+		)
+
+		switch (direction) {
+			case Directions.FORWARD:
+				return [null, nextArrow]
+
+			case Directions.BACKWARDS:
+				return [prevArrow, null]
+
+			case Directions.ABORT:
+				return [abortIcon, null]
+
+			default:
+				return [null, null]
+		}
+	})()
+
+	const content = (() => {
+		return (
+			<>
+				<span>
+					{prevIcon}
+					{children}
+					{nextIcon}
+				</span>
+				<HoverBg variant={variant} direction={direction} />
+			</>
+		)
+	})()
+
 	return (
-		<ButtonEl {...props}>
-			{props.children}
-			{nextArrow}
-		</ButtonEl>
+		<StyledButton as={!to ? 'button' : undefined} {...props}>
+			{content}
+		</StyledButton>
 	)
 }
 
 Button.defaultProps = {
-	showArrow: true,
+	variant: defaultVariant,
+	direction: Directions.FORWARD,
 }
 
 export default Button
+export const HoverEffect = HoverBg

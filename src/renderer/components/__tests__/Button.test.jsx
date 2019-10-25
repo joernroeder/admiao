@@ -2,15 +2,26 @@ import React from 'react'
 
 import { render } from '@testing-library/react'
 
-import Button from '../Button'
+import Button, { Directions } from '../Button'
 
 describe('Button component', () => {
-	test('matches the snapshot and contains the next arrow', () => {
+	test('matches the snapshot and contains the next icon', () => {
 		const { container } = render(<Button>Button Label</Button>)
 		const button = container.firstChild
 
 		expect(button).toHaveTextContent('Button Label')
-		expect(button).toContainHTML('<span class="arrow">→</span>')
+		expect(button).toContainHTML('<span class="icon next">→</span>')
+
+		expect(button).toMatchSnapshot()
+	})
+
+	test('matches the snapshot and contains the prev icon', () => {
+		const { container } = render(
+			<Button direction={Directions.BACKWARDS}>Button Label</Button>
+		)
+		const button = container.firstChild
+
+		expect(button).toContainHTML('<span class="icon prev">←</span>')
 
 		expect(button).toMatchSnapshot()
 	})

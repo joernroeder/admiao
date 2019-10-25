@@ -6,21 +6,15 @@ import SubHeading from '../../SubHeading'
 import Text from '../../Text'
 import Button from '../../Button'
 
-import { generatePartsViaIpc } from './pdfGeneratorHelper'
-import {
-	useGeneratedParts,
-	useGeneratedPartsDispatch,
-} from '../../../store/GeneratedPartsStore'
+import { generatePartsViaIpc } from './partsGeneratorHelper'
+
+import { useGeneratedPartsDispatch } from '../../../store/GeneratedPartsStore'
 import { useDistributionState } from '../../../store/DistributionStore'
 import { useSeedWordsDispatch } from '../../../store/SeedWordsStore'
+import { useGeneratorState, STATES } from '../../../store/GeneratorState'
 
-const GenerateParts = ({
-	generatorState,
-	setGeneratorState,
-	STATES,
-	words,
-	seedPartsState,
-}) => {
+const GenerateParts = ({ words, seedPartsState }) => {
+	const [generatorState, setGeneratorState] = useGeneratorState()
 	const isLoading = generatorState.state === STATES.loading
 	const { uniquePartsN } = seedPartsState
 
@@ -63,17 +57,7 @@ const GenerateParts = ({
 				console.warn(e)
 			}
 		})()
-	}, [
-		STATES,
-		generatorState,
-		generatorState.state,
-		seedPartsState,
-		setGeneratorState,
-		words,
-		distributionIdentifier,
-		generatedPartsDispatch,
-		seedWordsDispatch,
-	])
+	}, [generatorState, generatorState.state, seedPartsState, setGeneratorState, words, distributionIdentifier, generatedPartsDispatch, seedWordsDispatch])
 
 	return (
 		<>
@@ -108,7 +92,7 @@ const GenerateParts = ({
 						<Cell gridOffset={4} mt={3} gridColumn={3}>
 							{/* todo if local template this is the only case which uses generated parts directly, replace children with next button. */}
 							{/* children */}
-							<Button to="./distribute-local">
+							<Button to="./distribute-local" variant={'filled'}>
 								Write down Parts
 							</Button>
 						</Cell>

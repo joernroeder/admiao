@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from 'reflexbox'
+import { Box, Flex } from 'reflexbox'
 import { navigate } from '@reach/router'
 import raw from 'raw.macro'
 
@@ -7,13 +7,9 @@ import {
 	useSeedWordsDispatch,
 	useSeedWordsState,
 } from '../../../store/SeedWordsStore'
-import {
-	useDistributionState,
-	DistributionTypes,
-} from '../../../store/DistributionStore'
 
 import Text from '../../Text'
-import Button from '../../Button'
+import Button, { Directions } from '../../Button'
 import EnterWords from '../../EnterWords'
 
 const wordList = raw('../../../wordlists/bip39/english.txt')
@@ -22,10 +18,9 @@ const wordList = raw('../../../wordlists/bip39/english.txt')
 
 const Enter = ({ location }) => {
 	const { state } = location
-	const { words, total, isValid } = useSeedWordsState() // ✅
-	const { distributionType } = useDistributionState()
+	const { words, total, isValid } = useSeedWordsState()
 
-	const wordDispatch = useSeedWordsDispatch() // ✅
+	const wordDispatch = useSeedWordsDispatch()
 
 	if (state && state.reset && words.length) {
 		wordDispatch({ type: 'RESET' })
@@ -43,12 +38,18 @@ const Enter = ({ location }) => {
 		}
 
 		return (
-			<>
-				<Button showArrow={false} mr={2} onClick={onResetSeed}>
-					Nope, something is wrong!
+			<Flex>
+				<Button
+					direction={Directions.BACKWARDS}
+					mr={2}
+					onClick={onResetSeed}
+				>
+					Something is wrong!
 				</Button>
-				<Button onClick={onConfirmSeed}>Yes, looks good to me.</Button>
-			</>
+				<Button onClick={onConfirmSeed} variant={'filled'}>
+					Yes, looks good to me.
+				</Button>
+			</Flex>
 		)
 	})()
 
@@ -65,7 +66,7 @@ const Enter = ({ location }) => {
 						at least one of the words entered is incorrect.
 					</strong>
 				</Text>
-				<Button showArrow={false} onClick={resetSeed}>
+				<Button direction={Directions.BACKWARDS} onClick={resetSeed}>
 					Ok, reset words
 				</Button>
 			</>

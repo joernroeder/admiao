@@ -1,0 +1,448 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`File-System Warning it should render correctly 1`] = `
+.emotion-12 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  background: repeating-linear-gradient( -45deg, #ccc, #ccc 8, transparent 8, transparent 16 );
+}
+
+.emotion-11 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: transparent;
+  margin-left: -4px;
+  margin-right: -4px;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 50%;
+}
+
+.emotion-1 {
+  color: black;
+  margin-top: 512px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-transform: 1px;
+  -ms-transform: 1px;
+  transform: 1px;
+  font-family: 'SpaceGrotesk',sans-serif;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-1 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-1 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+.emotion-0 {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 0;
+  padding-bottom: 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.emotion-4 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 33.33333333333333%;
+}
+
+.emotion-3 {
+  background-color: white;
+  color: black;
+  margin-top: 64px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-10 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 16px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 33.33333333333333%;
+}
+
+.emotion-9 {
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  padding-top: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.emotion-6 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  margin-right: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: white;
+  background-color: black;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
+.emotion-6 .icon {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-6:hover .icon {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-6:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-6:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-6:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-6 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-5 {
+  background-color: whiteTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( 110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-5,
+*:focus > .emotion-5 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( 1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
+.emotion-8 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: black;
+  background-color: transparent;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
+.emotion-8 .icon {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-8:hover .icon {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-8:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-8:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-8:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-8 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-7 {
+  background-color: blackTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-7,
+*:focus > .emotion-7 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
+<div
+  class="emotion-12"
+>
+  <div
+    class="emotion-11"
+  >
+    <div
+      class="emotion-2"
+    >
+      <h2
+        class="emotion-1"
+        color="black"
+        font-size="1,2,2"
+      >
+        <span
+          class="emotion-0"
+        >
+          Be careful – you are about to leave the safe path!
+        </span>
+      </h2>
+    </div>
+    <div
+      class="emotion-4"
+    >
+      <p
+        class="emotion-3"
+        color="black"
+        font-size="0"
+      >
+        By handling generated shares yourself you may expose yourself to risk accidentally.
+        <br />
+        Are you sure you want to continue?
+      </p>
+    </div>
+    <div
+      class="emotion-10"
+    >
+      <span
+        class="emotion-9"
+        font-size="0"
+      >
+        <a
+          aria-current="page"
+          class="emotion-6"
+          href="/"
+        >
+          <span>
+            <span
+              class="icon prev"
+            >
+              ←
+            </span>
+             
+            No, go back
+          </span>
+          <span
+            class="emotion-5"
+          />
+        </a>
+        <a
+          class="emotion-8"
+          href="/enter-seed"
+        >
+          <span>
+            Yes, i take the risk
+             
+            <span
+              class="icon next"
+            >
+              →
+            </span>
+          </span>
+          <span
+            class="emotion-7"
+          />
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+`;

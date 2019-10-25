@@ -1,5 +1,5 @@
 const EventEmitter = require('events')
-const drivelist = require('drivelist')
+const driveList = require('drivelist')
 
 const driveStorage = new Map()
 const drivesEmitter = new EventEmitter()
@@ -21,7 +21,7 @@ const driveCheckLoop = async () => {
 	driveCheckTimeout = null
 
 	const now = Date.now()
-	const drives = await drivelist.list()
+	const drives = await driveList.list()
 
 	const mountedUsbDrives = drives
 		.filter(({ isUSB }) => isUSB)
@@ -38,8 +38,8 @@ const driveCheckLoop = async () => {
 
 		// path does not exist -> emitting add event
 		if (!driveStorage.has(devicePath)) {
-			drivesEmitter.emit('attach', drive)
 			driveStorage.set(devicePath, deviceData)
+			drivesEmitter.emit('attach', drive)
 		}
 		// updating existing timestamp
 		else if (driveStorage.has(devicePath)) {
@@ -56,8 +56,8 @@ const driveCheckLoop = async () => {
 		console.log(
 			`device at ${devicePath} was not in latest list. detaching...`
 		)
-		drivesEmitter.emit('detach', drive)
 		driveStorage.delete(devicePath)
+		drivesEmitter.emit('detach', drive)
 	}
 
 	if (isListening) {
@@ -83,6 +83,15 @@ const hasDriveAttached = () => {
 	return !!driveStorage.size
 }
 
+const getMountPointForDrive = drive => {
+	const { isReadOnly } = drive
+
+	return {
+		isReadOnly,
+		...drive.mountpoints[0],
+	}
+}
+
 const getAttachedMountPoints = () => {
 	let mountPoints = []
 
@@ -91,12 +100,7 @@ const getAttachedMountPoints = () => {
 	}
 
 	for (const [_, { drive }] of driveStorage) {
-		const { isReadOnly } = drive
-
-		mountPoints.push({
-			isReadOnly,
-			...drive.mountpoints[0],
-		})
+		mountPoints.push(getMountPointForDrive(drive))
 	}
 
 	return mountPoints
@@ -106,6 +110,7 @@ module.exports = {
 	listen,
 	stop,
 	hasDriveAttached,
+	getMountPointForDrive,
 	getAttachedMountPoints,
 	drivesEmitter,
 }

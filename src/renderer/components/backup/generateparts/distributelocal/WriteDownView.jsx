@@ -21,7 +21,7 @@ const WriteDownView = () => {
 	return (
 		<ThemeProvider theme={darkTheme}>
 			<GridWrap minHeight={'100vh'}>
-				<Cell gridOffset={2} gridColumn={3} mt={9}>
+				<Cell gridOffset={1} gridColumn={3} mt={9}>
 					<Router>
 						<IntroSidebar default />
 						<WriteDownSidebar path="copy/:partIndex" />

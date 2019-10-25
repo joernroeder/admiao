@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+
+import { useMountPoints } from '../../../hooks/useMountPoints'
+
 import { Flex } from 'reflexbox'
 
 import GridWrap from '../../GridWrap'
@@ -9,23 +12,9 @@ import Button from '../../Button'
 
 const CopyTemplateToUsb = ({ templateIdentifier }) => {
 	const { ipcRenderer } = window
-	const [mountPoints, setMountPoints] = useState([])
+
+	const [mountPoints, resetMountPoints] = useMountPoints(ipcRenderer)
 	const [copiedToDrive, setCopiedToDrive] = useState(undefined)
-
-	useEffect(() => {
-		const mountPoints = ipcRenderer.sendSync('get-usb-mountpoints')
-		setMountPoints(mountPoints)
-
-		// no drive attached on load, set up listener
-		if (!mountPoints || !mountPoints.length) {
-			console.log('setting up mountpoint listener')
-
-			// todo remove listener?!
-			ipcRenderer.on('drive-attached', drive => {
-				console.log('drive-attached', drive)
-			})
-		}
-	}, [ipcRenderer])
 
 	const insertDrive = (
 		<>
@@ -53,7 +42,7 @@ const CopyTemplateToUsb = ({ templateIdentifier }) => {
 					Please unmount the drive, print the template and check back
 					afterwards.
 				</Text>
-				<Button mt={3} to={'../../enter-seed'}>
+				<Button mt={3} to={'../../enter-seed'} variant={'filled'}>
 					Yes, I've printed the templates
 				</Button>
 			</Cell>
@@ -101,11 +90,21 @@ const CopyTemplateToUsb = ({ templateIdentifier }) => {
 		const [{ label, path }] = mountPoints
 
 		const ignoreDrive = () => {
-			setMountPoints([])
+			resetMountPoints()
 		}
 
 		const copyTemplateTo = () => {
-			ipcRenderer.once('template-copied', copied => {
+			if (!templateIdentifier) {
+				return
+			}
+
+			ipcRenderer.once('template-copied', (event, args) => {
+				const { identifier, copied } = args
+
+				if (identifier !== templateIdentifier) {
+					return
+				}
+
 				setCopiedToDrive(copied)
 			})
 
@@ -120,18 +119,22 @@ const CopyTemplateToUsb = ({ templateIdentifier }) => {
 				<Cell gridOffset={4} gridColumn={4} mt={9}>
 					<SubHeading mb={2}>Found USB-Drive</SubHeading>
 				</Cell>
-				<Cell gridOffset={4} gridColumn={4} mt={3}>
+				<Cell gridOffset={5} gridColumn={4} mt={3}>
 					<Text>
 						Found a USB drive with the name <strong>{label}</strong>
 						. Should the Templates-PDF get copied to this drive?
 					</Text>
 
-					<Flex flexDirection={'row'} alignItems={'flex-end'} mt={3}>
-						<Button onClick={ignoreDrive} mb={1}>
-							No, ignore it
-						</Button>
-						<Button onClick={copyTemplateTo}>
+					<Flex
+						flexDirection={'column'}
+						alignItems={'flex-start'}
+						mt={3}
+					>
+						<Button onClick={copyTemplateTo} variant={'filled'}>
 							Yes, copy Templates-PDF
+						</Button>
+						<Button onClick={ignoreDrive} showArrow={false} mt={1}>
+							No, ignore it
 						</Button>
 					</Flex>
 				</Cell>

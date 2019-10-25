@@ -1,0 +1,623 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Print Templates it should render correctly 1`] = `
+.emotion-9 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: -4px;
+  margin-right: -4px;
+  background-color: white;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 9px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 33.33333333333333%;
+}
+
+.emotion-0 {
+  color: black;
+  margin-bottom: 8px;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-transform: 1px;
+  -ms-transform: 1px;
+  transform: 1px;
+  font-family: 'SpaceGrotesk',sans-serif;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-0 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+.emotion-8 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 16px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 33.33333333333333%;
+}
+
+.emotion-2 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-7 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: flex-end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  margin-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: black;
+  background-color: transparent;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
+.emotion-4 .icon {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-4:hover .icon {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-4:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-4:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-4:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-4 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-3 {
+  background-color: blackTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-3,
+*:focus > .emotion-3 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
+.emotion-6 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: black;
+  background-color: transparent;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
+.emotion-6 .icon {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-6:hover .icon {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-6:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-6:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-6:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-6 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+<div
+  class="emotion-9"
+>
+  <div
+    class="emotion-1"
+  >
+    <h2
+      class="emotion-0"
+      color="black"
+      font-size="1,2,2"
+    >
+      Print Templates
+    </h2>
+  </div>
+  <div
+    class="emotion-8"
+  >
+    <p
+      class="emotion-2"
+      color="black"
+      font-size="0"
+    >
+      Is your printer connected to this device?
+    </p>
+    <div
+      class="emotion-7"
+    >
+      <button
+        class="emotion-4"
+      >
+        <span>
+          No, copy Templates-PDF to a USB-Drive
+           
+          <span
+            class="icon next"
+          >
+            →
+          </span>
+        </span>
+        <span
+          class="emotion-3"
+        />
+      </button>
+      <button
+        class="emotion-6"
+      >
+        <span>
+          Yes, open Templates-PDF
+           
+          <span
+            class="icon next"
+          >
+            →
+          </span>
+        </span>
+        <span
+          class="emotion-3"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Print Templates open template via external app it should update once it received \`template-opened\` message valid response 1`] = `
+.emotion-6 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: -4px;
+  margin-right: -4px;
+  background-color: white;
+  color: black;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 9px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 33.33333333333333%;
+}
+
+.emotion-0 {
+  color: black;
+  margin-bottom: 8px;
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 1;
+  -webkit-transform: 1px;
+  -ms-transform: 1px;
+  transform: 1px;
+  font-family: 'SpaceGrotesk',sans-serif;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+@media screen and (min-width:40em) {
+  .emotion-0 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+@media screen and (min-width:52em) {
+  .emotion-0 {
+    font-size: 16px;
+    line-height: 2;
+    -webkit-transform: 2px;
+    -ms-transform: 2px;
+    transform: 2px;
+  }
+}
+
+.emotion-5 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-top: 16px;
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 33.33333333333333%;
+}
+
+.emotion-2 {
+  color: black;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  line-height: 0;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
+}
+
+.emotion-4 {
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  margin-top: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-letter-spacing: 0.025em;
+  -moz-letter-spacing: 0.025em;
+  -ms-letter-spacing: 0.025em;
+  letter-spacing: 0.025em;
+  font-size: 12px;
+  line-height: 0;
+  -webkit-transform: 0;
+  -ms-transform: 0;
+  transform: 0;
+  color: white;
+  background-color: black;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 700;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
+.emotion-4 .icon {
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in;
+  transition: transform 0.25s ease-in;
+}
+
+.emotion-4:hover .icon {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+}
+
+.emotion-4:hover .icon.next {
+  -webkit-transform: translateX(0.4em);
+  -ms-transform: translateX(0.4em);
+  transform: translateX(0.4em);
+}
+
+.emotion-4:hover .icon.prev {
+  -webkit-transform: translateX(-0.4em);
+  -ms-transform: translateX(-0.4em);
+  transform: translateX(-0.4em);
+}
+
+.emotion-4:hover .icon.flip {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.emotion-4 > span:first-of-type {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-3 {
+  background-color: whiteTransparent;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -ms-transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  transform: skew( -14deg, 0 ) translateX( -110% ) translateY( 0% );
+  -webkit-transition: -webkit-transform 0.25s ease-in,opacity 0.25s ease-in;
+  -webkit-transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+  transition: transform 0.25s ease-in,opacity 0.25s ease-in;
+}
+
+*:hover > .emotion-3,
+*:focus > .emotion-3 {
+  opacity: 1;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  -ms-transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+  transform: translateX( -1.9em ) translateY(0) skew( -14deg, 0 );
+}
+
+<div
+  class="emotion-6"
+>
+  <div
+    class="emotion-1"
+  >
+    <h2
+      class="emotion-0"
+      color="black"
+      font-size="1,2,2"
+    >
+      Print Templates
+    </h2>
+  </div>
+  <div
+    class="emotion-5"
+  >
+    <p
+      class="emotion-2"
+      color="black"
+      font-size="0"
+    >
+      Please print out the PDF template and continue here afterwards.
+    </p>
+    <a
+      class="emotion-4"
+      href="/enter-seed"
+    >
+      <span>
+        Yes, I've printed the templates
+         
+        <span
+          class="icon next"
+        >
+          →
+        </span>
+      </span>
+      <span
+        class="emotion-3"
+      />
+    </a>
+  </div>
+</div>
+`;

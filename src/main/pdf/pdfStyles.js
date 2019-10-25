@@ -31,6 +31,7 @@ const styles = {
 			margin: [95, 0, 0, 16],
 		},
 	},
+	pageMargins: [70, 70, 90, 0],
 }
 
 module.exports = {

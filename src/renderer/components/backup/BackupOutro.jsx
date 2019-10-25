@@ -4,8 +4,7 @@ import GridWrap from '../GridWrap'
 import Cell from '../Cell'
 import SubHeading from '../SubHeading'
 import Text from '../Text'
-import Button from '../Button'
-import { useGeneratedPartsDispatch } from '../../store/GeneratedPartsStore'
+
 import { useSeedWordsDispatch } from '../../store/SeedWordsStore'
 import { useSeedPartsDispatch } from '../../store/SeedPartsStore'
 import { useDistributionDispatch } from '../../store/DistributionStore'
@@ -14,7 +13,6 @@ const BackupOutro = () => {
 	const seedPartsDispatch = useSeedPartsDispatch()
 	const seedWordsDispatch = useSeedWordsDispatch()
 	const distributionDispatch = useDistributionDispatch()
-	//const generatedPartsDispatch = useGeneratedPartsDispatch()
 
 	useEffect(() => {
 		;[seedPartsDispatch, seedWordsDispatch, distributionDispatch].forEach(
@@ -50,11 +48,12 @@ const BackupOutro = () => {
 							<Text>
 								Now it's up to you to keep your backup and the
 								parts safe. Never introduce a "single point of
-								failure" by sending them together via Mail or
-								print/copy them on the same device. You'll find
-								more best practices at <strong>XXXX.tld</strong>
-								<br />
-								✌️
+								failure" by sending the required shares together
+								via Mail or print/copy them on the same device.
+							</Text>
+							<Text mt={1}>
+								You'll find more best practices at{' '}
+								<strong>XXXX.tld</strong> ✌️
 							</Text>
 						</Cell>
 					</GridWrap>

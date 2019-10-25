@@ -9,6 +9,8 @@ import {
 } from '../../../../utils/styled-system-rhythm'
 
 import { Flex } from 'reflexbox'
+import { HoverEffect, Directions } from '../../../Button'
+
 import CurrentValue from './CurrentValue'
 
 const Wrap = styled(Flex)`
@@ -33,6 +35,13 @@ const Button = styled.button`
 	flex-grow: 1;
 	margin-right: 4px;
 	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+
+	& > span:first-of-type {
+		position: relative;
+		z-index: 10;
+	}
 
 	& + button {
 		margin-left: 4px;
@@ -63,6 +72,8 @@ const PartSelector = ({
 	labelledBy,
 }) => {
 	const variant = { backgroundColor: background, color }
+	const hoverVariant =
+		background && background.includes('light') ? 'white' : 'black'
 
 	return (
 		<Wrap
@@ -78,17 +89,22 @@ const PartSelector = ({
 				<Flex>
 					<Button
 						{...variant}
-						onClick={onIncrement}
-						aria-label={buttonLabels.increment}
-					>
-						+
-					</Button>
-					<Button
-						{...variant}
 						onClick={onDecrement}
 						aria-label={buttonLabels.decrement}
 					>
-						&minus;
+						<span>&minus;</span>
+						<HoverEffect
+							variant={hoverVariant}
+							direction={Directions.DOWN}
+						/>
+					</Button>
+					<Button
+						{...variant}
+						onClick={onIncrement}
+						aria-label={buttonLabels.increment}
+					>
+						<span>+</span>
+						<HoverEffect variant={hoverVariant} />
 					</Button>
 				</Flex>
 			</Flex>

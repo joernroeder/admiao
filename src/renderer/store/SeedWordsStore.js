@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer } from 'react'
 const bip39 = require('bip39')
 
 const initialWords = [
+	/*
 	'answer',
 	'dice',
 	'warm',
@@ -14,10 +15,10 @@ const initialWords = [
 	'matrix',
 	'genre',
 	'renew',
+	*/
 ]
 
 const initialState = {
-	//words: [],
 	words: initialWords,
 	total: 12, // todo handle other seeds 18, 24
 	isConfirmed: false,

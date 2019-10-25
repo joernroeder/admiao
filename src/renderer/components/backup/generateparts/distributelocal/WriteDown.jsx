@@ -26,7 +26,7 @@ const WriteDown = ({ partIndex }) => {
 
 	return (
 		<Box mt={19}>
-			<TextHeading>Copy Words for Part {index + 1}</TextHeading>
+			<TextHeading>Copy Words for Share {index + 1}</TextHeading>
 			<SeedWordsList
 				hideAll={true}
 				showOnHover={true}

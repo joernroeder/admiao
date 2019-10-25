@@ -9,18 +9,12 @@ import Text from '../Text'
 import Button from '../Button'
 import StyledLink from '../StyledLink'
 
-import {
-	useDistributionDispatch,
-	DistributionTypes,
-} from '../../store/DistributionStore'
-
 const NoWrap = styled.span`
 	white-space: nowrap;
 `
 
 const PrepareDrives = () => {
 	const { requiredPartsT, requiredDisks, partsPerDisk } = useSeedPartsState()
-	const dispatch = useDistributionDispatch()
 
 	const enterSeedUrl = '../enter-seed'
 

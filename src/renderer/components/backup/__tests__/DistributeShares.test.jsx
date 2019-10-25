@@ -2,9 +2,10 @@ import React from 'react'
 
 import { fireEvent, render } from '@testing-library/react'
 
-import DistributeShares from '../DistributeShares'
 import { DistributionProvider } from '../../../store/DistributionStore'
 import { SeedPartsProvider } from '../../../store/SeedPartsStore'
+
+import DistributeShares from '../DistributeShares'
 
 describe('DistributeParts view', () => {
 	const renderWithRouterAndProviders = children => {

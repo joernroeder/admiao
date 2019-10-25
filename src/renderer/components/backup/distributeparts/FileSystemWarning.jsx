@@ -6,13 +6,13 @@ import {
 } from '../../../store/DistributionStore'
 
 import { Flex } from 'reflexbox'
-import Button from '../../Button'
+import Button, { Directions } from '../../Button'
 import GridWrap from '../../GridWrap'
 import Cell from '../../Cell'
 import SubHeading from '../../SubHeading'
 import Text from '../../Text'
 import styled from '@emotion/styled'
-import { background, space } from 'styled-system'
+import { space } from 'styled-system'
 import {
 	verticalRhythm,
 	verticalRhythmProps,
@@ -23,8 +23,6 @@ const StripedBackground = styled(Flex)`
 	${props => {
 		const color = props.theme.colors.lightGray
 		const size = 8
-
-		console.log(size)
 
 		return `background: repeating-linear-gradient(
 		-45deg,
@@ -37,7 +35,6 @@ const StripedBackground = styled(Flex)`
 `
 
 const StripedTextPadding = styled.span`
-	//${background};
 	${space};
 	box-decoration-break: clone;
 `
@@ -50,7 +47,6 @@ StripedTextPadding.defaultProps = {
 }
 
 const StripedBoxPadding = styled.span`
-	//${background};
 	${verticalRhythm};
 	${space};
 	display: inline-block;
@@ -92,6 +88,7 @@ const FileSystemWarning = () => {
 							mr={2}
 							variant={'filled'}
 							showArrow={false}
+							direction={Directions.BACKWARDS}
 						>
 							No, go back
 						</Button>

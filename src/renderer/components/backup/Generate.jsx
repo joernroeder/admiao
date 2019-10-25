@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { navigate } from '@reach/router'
-//import { ipcRenderer } from 'electron';
 
 import GeneratePdfs from './generateparts/GeneratePdfs'
-import SavePdfsToFileSystemButton from './generateparts/SavePdfsToFileSystemButton'
-import SavePdfsToUsbDrivesButton from './generateparts/SavePdfsToUsbDrivesButton'
+import SavePdfsToFileSystemButton from './generateparts/filesystem/SavePdfsToFileSystemButton'
+import SavePdfsToUsbDrivesButton from './generateparts/distributeremote/SavePdfsToUsbDrivesButton'
 import GenerateParts from './generateparts/GenerateParts'
 
 import { useSeedWordsState } from '../../store/SeedWordsStore'
@@ -14,20 +13,7 @@ import {
 	DistributionTypes,
 } from '../../store/DistributionStore'
 
-const STATES = {
-	loading: 'LOADING',
-	generated: 'GENERATED',
-	saved: 'SAVED',
-	failed: 'FAILED',
-}
-
 const Generate = () => {
-	const [generatorState, setGeneratorState] = useState({
-		state: undefined,
-		pendingIdentifier: null,
-		error: null,
-	})
-
 	const seedPartsState = useSeedPartsState()
 	const { words, isConfirmed } = useSeedWordsState()
 	const { distributionType } = useDistributionState()
@@ -47,14 +33,7 @@ const Generate = () => {
 		return null
 	}
 
-	const generatorStateWrapper = {
-		generatorState,
-		setGeneratorState,
-		STATES,
-	}
-
 	const generatorProps = {
-		...generatorStateWrapper,
 		seedPartsState,
 		words,
 	}
@@ -65,7 +44,7 @@ const Generate = () => {
 		case DistributionTypes.REMOTE_PRINT: {
 			distributionTypeGenerate = (
 				<GeneratePdfs {...generatorProps}>
-					<SavePdfsToUsbDrivesButton {...generatorStateWrapper} />
+					<SavePdfsToUsbDrivesButton />
 				</GeneratePdfs>
 			)
 			break
@@ -74,7 +53,7 @@ const Generate = () => {
 		case DistributionTypes.FILE_SYSTEM: {
 			distributionTypeGenerate = (
 				<GeneratePdfs {...generatorProps}>
-					<SavePdfsToFileSystemButton {...generatorStateWrapper} />
+					<SavePdfsToFileSystemButton />
 				</GeneratePdfs>
 			)
 			break

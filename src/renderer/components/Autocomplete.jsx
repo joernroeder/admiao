@@ -15,8 +15,6 @@ import {
 } from '../utils/styled-system-rhythm'
 import { theme } from '../utils/theme'
 
-import Text from './Text'
-
 const ENTER_KEY = 13
 const TAB_KEY = 9
 const ESCAPE_KEY = 27
@@ -181,7 +179,7 @@ const Autocomplete = ({
 		}
 
 		if (!filteredSuggestions.length) {
-			return <Text>Nothing here :(</Text>
+			return null //<Text>Nothing here :(</Text>
 		}
 
 		return (
